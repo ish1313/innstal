@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div id="menu-0" custom-code="true">
+<section>
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+
+                    <a class="navbar-caption" href="/">innstal</a>                    
+                        
+                    
+
+                </div>
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Products</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Service</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/pricing">Pricing</a></li>
+
+
+                        <!-- <li class="nav-item dropdown open">
+                            <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
+                            </div>
+                        </li> -->
+
+
+                        <li class="nav-item nav-btn">
+                            {% if request.user.is_authenticated %}
+                                <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Login</a>
+                            {% else %}
+                                <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Logout</a>
+                            {% endif %}
+                        </li>
+
+                    </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+</div>
+
+<section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url({% static '/assets/images/bg_header.jpg' %});">
+
+    
+
+    <div class="mbr-table mbr-table-full">
+        <div class="mbr-table-cell">
+
+            <div class="container">
+                <div class="mbr-section row">
+                    <div class="mbr-table-md-up">
+                        
+                        <div class="mbr-table-cell col-md-5 content-size text-xs-center text-md-right" style="padding-right: 100px;">
+ 
+                            <h3 class="mbr-section-title display-2" style="text-align: left;">Looking for Instuction Manual</h3>
+
+                            <div class="mbr-section-text" style="margin-top:60px; text-align: left;">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.&nbsp;</p>
+                            </div>
+
+                            <div class="form-group has-feedback" style="margin-top: 40px;">
+                                <input type="text" class="form-control" id="inputSuccess2" placeholder="Search for Product Manuals..." style="padding-right: 40px;" />
+                                <!-- <a href=""><span class="glyphicon glyphicon-search"></span></a> -->
+                                <a href="/search_result" style="position: relative; top: -38px; left: -20px; float: right;"><img src="{% static '/assets/images/icon_search.png'%}"></a>
+                                <!-- <a href=""><span class="glyphicon glyphicon-search form-control-feedback"></span></a> -->
+                            </div>
+
+
+                            <div class="mbr-section-text" style="margin-top:40px; text-align: left;">
+                                <a href="#features1-e" style="color: white; text-decoration: none;"><p>Browse In Your Catagory&nbsp;</p></a>
+                            </div>
+
+                            <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true">
+                                <a href="#header3-k">
+                                    <i class="mbr-arrow-icon" style="padding-left: 18px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mbr-table-cell mbr-valign-top mbr-left-padding-md-up col-md-7 image-size" style="width: 50%;">
+                            <h3 class="mbr-section-title display-2" style="text-align: left;">Want to Register  your Warranty Card</h3>
+
+                            <div class="mbr-section-text" style="margin-top:60px; text-align: left;">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.&nbsp;</p>
+                            </div>
+
+                            <div class="mbr-section-btn" style="margin-top:60px; text-align: left;">
+                                <a class="btn btn-orange" href="/register_warrantly" id="register_warrantly">Register Now</a>
+                                <!-- <a class="btn btn-white" href="#">Register Warranty</a> -->
+                            </div>
+
+                            <div class="mbr-section-text" style="margin-top:40px; text-align: left;">
+                                <a href="/login" style="color: white; text-decoration: none;"><p>Claim Warranty&nbsp;</p></a>
+                            </div>
+
+                            <!-- <div class="mbr-section-btn" style="margin-top:60px; text-align: left;">
+                                <a class="btn btn-white" href="#">Search Manual</a>
+                                <a class="btn btn-white" href="#">Register Warranty</a>
+                            </div> -->
+                            
+                            <!-- <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true">
+                                <a href="#header3-k">
+                                    <i class="mbr-arrow-icon" style="padding-left: 18px;"></i>
+                                </a>
+                            </div> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+</section>
+
+<section class="container mbr-cards mbr-section mbr-section-nopadding" id="features1-e" style="background-color: rgb(244, 244, 244);" >
+
+    <section class="mbr-section mbr-section__container article" id="header3-k" style="background-color: rgb(244, 244, 244); padding-top: 60px; padding-bottom: 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="mbr-section-title display-2">Browse in perfect  Instruction Manual Category</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin-top: 50px;">
+        <ul class="col-md-12 col-sm-12" style="list-style: none;">
+        {% for product in products %}
+            <li class="col-md-3 col-md-3" style="padding-top: 30px; padding-bottom: 30px;">
+                        <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/' %}{{product.img_path}}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">{{product.product_name}}</h5>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+     <!-- <div class="mbr-cards-row row striped" style="margin-top: 30px;">
+
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_laptop.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">LAPTOP</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_mobile.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">MOBILES</h5>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_watch.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">SMART WATCHES</h5>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_digital_camera.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">DIGITAL CAMERAS</h5>                     
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <div class="mbr-cards-row row striped">
+
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_video_camera.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">VIEDO CAMERA</h5>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_lighter.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">ZIPPO LIGHTER</h5>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_energy_saving.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">ENERGY SAVING</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/img_drone.jpg' %}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">DRONE</h5>                     
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div> -->
+
+    <div style="text-align: center;">
+        <a class="btn btn-white-cat" href="#">Browse All Category</a>
+    </div>
+</section>
+
+<section class="mbr-section mbr-background" id="testimonials1-7">
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    </div>
+
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">How Innstal Works</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="mbr-testimonials mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h2 style="margin-bottom: 30px;">Instruction Manual</h2>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work1.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Find User Manual</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px; margin-left: 26px;">
+                            <img src="{% static '/assets/images/icon_sep1.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work2.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Read Installation Instruction</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px; margin-left: 26px;">
+                            <img src="{% static '/assets/images/icon_sep1.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work3.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Download as PDF</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 style="margin-bottom: 30px;">Warranty Card</h2>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{% static '/assets/images/img_work4.png' %}">
+                            </div>
+                            <div class="col-md-9">
+                                <h6>Register Your Warranty Card</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style=" margin-left: 26px; position: relative; top: -30px;" id="icon_sep2">
+                            <img src="{% static '/assets/images/icon_sep2.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work5.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Claim Your warranty card In future</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="height: 40px;"></div>
+                        <div class="mbr-section-btn" style="text-align: left;">
+                            <a class="btn btn-orange" href="/register_warrantly">Register a Warranty Card</a>
+                            <!-- <a class="btn btn-white" href="#">Register Warranty</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+<section class="mbr-section mbr-testimonials" id="testimonials1-8">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    <div class="mbr-testimonials mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row" style="font-size: 20px; font-weight: bold;">
+                Join over 2 million peoples already using Innstal. Register Now
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-12" style="padding-left: 0px;">
+                    <div class="col-md-3" >
+                        <input type="text" name="" placeholder="Name" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Email" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Phone Number" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <button onclick="" style="width: 100%; height: 50px; text-align: center; background-color: #ff9837; box-shadow: none; border: none; color: white;">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px; text-align: center;">
+                By clicking "Register Now" I agree to Innstal's <a href="#" style="color: black; text-decoration: underline;">Terms of Service.</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section mbr-background" id="about_innstal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="padding-left: 0px">
+                <div class="col-md-5" style="padding-left: 0px">
+                    <img src="{% static '/assets/images/img_about.jpg' %}">
+                </div>
+                <div class="col-md-7">
+                    
+                    <h1>About Instal</h1>
+                    <p style="margin-top: 50px;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<br><br>
+Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+
+                    <div style="margin-top: 40px;">
+                        <a href="/about" style="padding: 20px 50px; text-align: center; background-color: #ff9837; box-shadow: none; border: none; color: white;">Know More</a>
+                        <a href="/contact" style="color: black; color: #ff9837; margin-left: 30px; text-decoration: none;">Request for Service <img src="{% static '/assets/images/icon_arrow_right.png' %}" style="margin-left: 5px;"></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

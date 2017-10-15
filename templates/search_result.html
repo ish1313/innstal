@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div id="menu-1">
+<section style="margin-bottom: 100px;">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+
+                    <a class="navbar-caption" href="/">innstal</a>                    
+                        
+                    
+
+                </div>
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Products</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Service</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/pricing">Pricing</a></li>
+
+
+                        <!-- <li class="nav-item dropdown open">
+                            <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
+                            </div>
+                        </li> -->
+
+                        <li class="nav-item nav-btn">
+                            <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login" style="border-color: black; color: black">Login</a>
+                        </li>
+
+                    </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+</div>
+
+<section style="background-image: url({% static '/assets/images/bg_reg_warrantly.jpg' %}); width: 100%; height: 150px; text-align: center; color: white;padding-top: 30px; margin-bottom: 50px;" id="warrant_reg">
+	<p>Instuction Manual</p>
+	<h1>Showing Result for Dell Inspiron</h1>
+</section>
+
+<section class="container">
+    <div class="form-group has-feedback" style="margin-left: 25%; margin-top: 40px; text-align: center;">
+        <input type="text" class="form-control" id="inputSuccess2" placeholder="Search for Product Manuals..." style="padding-right: 40px; width: 70%" />
+        <!-- <a href=""><span class="glyphicon glyphicon-search"></span></a> -->
+        <a href="/search_result" style="position: relative; top: -38px; left: 7%; text-align: center;"><img src="{% static '/assets/images/icon_search.png'%}"></a>
+        <!-- <a href=""><span class="glyphicon glyphicon-search form-control-feedback"></span></a> -->
+    </div>
+</section>
+
+<section class="container mbr-cards mbr-section mbr-section-nopadding" id="features1-e" style="background-color: rgb(244, 244, 244);" >
+
+    <div style="margin-top: 50px;">
+        <ul class="col-md-12 col-sm-12" style="list-style: none;">
+        {% for product in products %}
+            <li class="col-md-3 col-md-3" style="padding-top: 30px; padding-bottom: 30px;">
+                        <div class="card cart-block">
+                    <div class="card-img"><img src="{% static '/assets/images/' %}{{product.img_path}}" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h5 class="card-subtitle">{{product.product_name}}</h5>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

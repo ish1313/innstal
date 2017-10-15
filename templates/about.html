@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<style type="text/css">
+    #sec_logo {
+        padding-left: 80px;
+    }
+    #sec_logo img{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    @media (max-width: 767px) {
+        #sec_logo {
+            text-align: center;
+            float: top;
+        }
+        #sec_logo img {
+            margin-top: 30px;
+            float: top;
+        }
+    }
+</style>
+
+<div id="menu-1">
+<section style="margin-bottom: 100px;">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+
+                    <a class="navbar-caption" href="/">innstal</a>                    
+                        
+                    
+
+                </div>
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Products</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Service</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/pricing">Pricing</a></li>
+
+
+                        <!-- <li class="nav-item dropdown open">
+                            <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
+                            </div>
+                        </li> -->
+
+                        <li class="nav-item nav-btn">
+                            <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login" style="border-color: black; color: black">Login</a>
+                        </li>
+
+                    </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+</div>
+
+<section style="background-image: url({% static '/assets/images/bg_reg_warrantly.jpg' %}); width: 100%; height: 150px; text-align: center; color: white;padding-top: 30px; margin-bottom: 50px;" id="warrant_reg">
+	<p>Lorem ipsum dolor</p>
+	<h1>Some thing About Innstal</h1>
+</section>
+
+<section class="container" style="margin-top: 90px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6" style="padding-right: 10%;">
+                <h3 style="margin-bottom: 30px;">Lorem ipsum dolor sit amet, ons ectetur adipscing eli psct, sed do.</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<br><br>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+            </div>
+            <div class="col-md-6" style="padding-right: 30px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section mbr-background" id="testimonials1-7">
+
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    </div>
+
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">How Innstal Works</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="mbr-testimonials mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <h2 style="margin-bottom: 30px;">Instruction Manual</h2>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work1.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Find User Manual</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px; margin-left: 26px;">
+                            <img src="{% static '/assets/images/icon_sep1.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work2.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Read Installation Instruction</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px; margin-left: 26px;">
+                            <img src="{% static '/assets/images/icon_sep1.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work3.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Download as PDF</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 style="margin-bottom: 30px;">Warranty Card</h2>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{% static '/assets/images/img_work4.png' %}">
+                            </div>
+                            <div class="col-md-9">
+                                <h6>Register Your Warranty Card</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style=" margin-left: 26px; position: relative; top: -30px;" id="icon_sep2">
+                            <img src="{% static '/assets/images/icon_sep2.png' %}">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="{% static '/assets/images/img_work5.png' %}">
+                            </div>
+                            <div class="col-md-10" style="padding-right: 100px;">
+                                <h6>Claim Your warranty card In future</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                            </div>
+                        </div>
+                        <div style="height: 40px;"></div>
+                        <div class="mbr-section-btn" style="text-align: left;">
+                            <a class="btn btn-orange" href="/register_warrantly">Register a Warranty Card</a>
+                            <!-- <a class="btn btn-white" href="#">Register Warranty</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+<section style="background-color: #eeeeed; padding-top: 50px; padding-bottom: 50px;" id="sec_logo">
+    <div class="container">
+        <img src="{% static '/assets/images/logo_airbnb.png' %}">
+        <img src="{% static '/assets/images/logo_shopify.png' %}">
+        <img src="{% static '/assets/images/logo_salesforce.png' %}">
+        <img src="{% static '/assets/images/logo_bird.png' %}">
+        <img src="{% static '/assets/images/logo_netflix.png' %}">
+        <img src="{% static '/assets/images/logo_dropbox.png' %}">
+        <img src="{% static '/assets/images/logo_huge.png' %}">
+
+    </div>
+</section>
+
+<section class="mbr-section mbr-testimonials" id="testimonials1-8" style="margin-top: 80px;">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    <div class="mbr-testimonials mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row" style="font-size: 20px; font-weight: bold;">
+                Join over 2 million peoples already using Innstal. Register Now
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-12" style="padding-left: 0px;">
+                    <div class="col-md-3" >
+                        <input type="text" name="" placeholder="Name" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Email" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Phone Number" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <button onclick="" style="width: 100%; height: 50px; text-align: center; background-color: #ff9837; box-shadow: none; border: none; color: white;">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px; text-align: center;">
+                By clicking "Register Now" I agree to Innstal's <a href="#" style="color: black; text-decoration: underline;">Terms of Service.</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

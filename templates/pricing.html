@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+
+<link type="text/css" href="{% static '/pricing.css' %}" rel="stylesheet" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
+
+<script src="{% static '/assets/web/assets/jquery/jquery.min.js' %}"></script>
+  
+  
+
+<div id="menu-1">
+<section style="margin-bottom: 100px;">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+
+                    <a class="navbar-caption" href="/">innstal</a>                    
+                        
+                    
+
+                </div>
+                <div class="mbr-table-cell">
+
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Products</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Service</a></li>
+                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/pricing">Pricing</a></li>
+
+
+                        <!-- <li class="nav-item dropdown open">
+                            <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
+                                <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
+                            </div>
+                        </li> -->
+
+                        <li class="nav-item nav-btn">
+                            <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login" style="border-color: black; color: black">Login</a>
+                        </li>
+
+                    </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</section>
+</div>
+
+<section class="container" style="margin-bottom: 50px;">
+	<div class="row">
+		<h1 style="text-align: center; margin-bottom: 30px;">Subscribe for your Membership</h1>
+		<div class="row" style="text-align: center;">
+            <div class="col-md-5" style="text-align: right;" id="price_billing_annual">
+                <strong>Annual Billing</strong>    
+            </div>
+            <div class="col-md-2">
+			<div class="toggle-bg">
+                <input type="radio" name="toggle" value="PRICE TO!" id="price-billing2" aria-checked="checked" checked>
+    
+                <input type="radio" name="toggle" value="PRICE DIN TO!" id="price-billing1">    
+
+                <span class="switch"></span>
+            </div>
+            </div>
+            <div class="col-md-5" style="text-align: left;" id="price_billing_manual">Monthly Billing</div>
+		</div>
+        
+	</div>
+</section>
+
+<section class="container pricing" style="margin-bottom: 50px;">
+
+<div id="row menu-holder">
+
+	<div class=" price_table">
+		<div class="col-md-4 column_1">
+			<ul>
+				<li class="header_row_1 align_center">
+					<div class="pack-title">Free</div>
+				</li>
+				<li class="header_row_2 align_center">
+					<div class="price"><span>Life Time Free Service</span></div>
+					
+				</li>
+				<li>
+					<p class="container" style="text-align: center; padding-left: 80px; padding-right: 80px; line-height: 40px;">
+Lorem ipsum dolor sit 
+Amet consectetur adipiscing
+Elit sed do eiusmod tempor
+Incididunt ut labore et
+Dolore magna aliqua
+					</p>
+				</li>	
+				<li class="row_style_footer_1"><a href="#" class="buy_now">Start for Free</a></li>
+				
+			</ul>
+			
+		</div><!--end column-->
+
+		<div class="col-md-4 column_1">
+			<ul>
+				<li class="header_row_1 align_center">
+					<div class="pack-title">Basic</div>
+				</li>
+				<li class="header_row_2 align_center">
+					<div class="price"><span>$49.99/Month</span></div>
+					<div class="time">Save $ 09</div>
+				</li>
+				<li>
+					<p class="container" style="text-align: center; padding-left: 80px; padding-right: 80px; line-height: 40px;">
+Lorem ipsum dolor sit 
+Amet consectetur adipiscing
+Elit sed do eiusmod tempor
+Incididunt ut labore et
+Dolore magna aliqua
+					</p>
+				</li>
+				<li class="row_style_footer_1"><a href="#" class="buy_now">Choose Plan</a></li>
+			</ul>
+		</div><!--end column-->
+
+		<div class="col-md-4 column_1">
+			<ul>
+				<li class="header_row_1 align_center">
+					<div class="pack-title">Standard</div>
+				</li>
+				<li class="header_row_2 align_center">
+					<div class="price"><span>$79.99/Month</span></div>
+					
+				</li>
+				<li>
+					<p class="container" style="text-align: center; padding-left: 80px; padding-right: 80px; line-height: 40px;">
+Lorem ipsum dolor sit 
+Amet consectetur adipiscing
+Elit sed do eiusmod tempor
+Incididunt ut labore et
+Dolore magna aliqua
+					</p>
+				</li>
+				<li class="row_style_footer_1"><a href="#" class="buy_now">Choose Plan</a></li>
+			</ul>
+		</div><!--end column-->
+
+	</div><!--end price table-->
+</div><!--end menu-holder-->
+
+</section>
+
+
+<section class="mbr-section mbr-testimonials" id="testimonials1-8">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);">
+    <div class="mbr-testimonials mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row" style="font-size: 20px; font-weight: bold;">
+                Join over 2 million peoples already using Innstal. Register Now
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-12" style="padding-left: 0px;">
+                    <div class="col-md-3" >
+                        <input type="text" name="" placeholder="Name" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Email" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="" placeholder="Phone Number" style="width: 70%; height: 50px; padding-left: 20px;">
+                    </div>
+                    <div class="col-md-3">
+                        <button onclick="" style="width: 100%; height: 50px; text-align: center; background-color: #ff9837; box-shadow: none; border: none; color: white;">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px; text-align: center;">
+                By clicking "Register Now" I agree to Innstal's <a href="#" style="color: black; text-decoration: underline;">Terms of Service.</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style type="text/css">
+    
+/* Toggle Switch Radio button */
+
+.toggle-bg {
+    position: relative; /* require to allow the switch to move around */
+    display: block;
+    width: 70px;
+    height: 30px;
+    background: #ff9837;
+    border: 2px solid #ff9837;
+    margin: 0 auto 1em auto;
+    border-radius: 1em;
+}
+
+.toggle-bg label{
+  left: -45px;
+}
+
+
+.toggle-bg input {
+    position: absolute;
+    z-index: 2; 
+    left: 0;
+    
+    /*IE fixes*/
+    zoom: 1;
+    width: 70px;
+    height: 28px;
+    margin: 0; 
+    padding: 0;
+    cursor: pointer;
+    opacity: 0; 
+    filter: alpha(opacity=0);
+}
+
+.toggle-bg input:focus + label {
+    padding-bottom: 5px;
+    border-bottom:1px solid black;
+}
+
+.switch {
+    background: white;
+    position: relative;
+    z-index: 1; 
+    top: 4px; 
+    left: 4px; 
+    display: block;
+    float: left;
+    width: 21px;
+    height: 21px;
+    border-radius: 1.5em;
+    transition: all, .2s, ease-out;
+}
+
+.toggle-bg .move-toggle {
+    left: 64%;
+}
+
+.toggle-bg input.active {
+    z-index: 0;
+}
+
+@media (max-width: 767px) {
+    #price_billing_annual {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    #price_billing_manual {
+        text-align: center !important;
+    }
+}
+
+</style>
+
+<script type="text/javascript">
+
+$('.toggle-bg input[type="radio"]').change(function() {
+  $('.toggle-bg input[type="radio"]').removeClass('active');
+  $(this).addClass('active');
+  $(this).siblings('.switch').toggleClass('move-toggle');
+
+  //output value for testing
+  var other = $('input:checked').val();
+  $('.toggle-value').text(other);
+  $('.toggle-value').removeClass().addClass("toggle-value " + toggleOptions[other]);
+});
+</script>
+
+{% endblock %}
