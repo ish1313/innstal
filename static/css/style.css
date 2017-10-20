@@ -5,9 +5,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-    background-image: url('/static/images/bg_header.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    
 }
 nav {
 	background-color: transparent !important;
@@ -15,13 +13,16 @@ nav {
 	text-align: left;
 	padding: 0px 50px;
 }
-.container {
+.header .container {
 	width: 85%;
 }
 .header {
 	text-align: left;
-	padding: 20px;
 	color: #FFF;
+	background-image: url('/static/images/bg_header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
 }
 .header h3 {
 	font-weight: 300;
