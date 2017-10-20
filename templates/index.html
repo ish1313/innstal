@@ -4,63 +4,57 @@
 {% block content %}
 
 <div id="menu-0" custom-code="true">
-<section>
-    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+    <section>
+        <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="mbr-table">
-                <div class="mbr-table-cell">
+                <div class="mbr-table">
+                    <div class="mbr-table-cell">
+                        <a class="navbar-caption" href="/">innstal</a>                    
+                    </div>
+                    <div class="mbr-table-cell">
 
-                    <a class="navbar-caption" href="/">innstal</a>                    
-                        
-                    
+                        <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="hamburger-icon"></div>
+                        </button>
 
+                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">How it works</a></li>
+                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Business</a></li>
+                            <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Blog</a></li>
+                            
+                            <!-- <li class="nav-item dropdown open">
+                                <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
+                                    <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
+                                    <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
+                                    <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
+                                </div>
+                            </li> -->
+
+
+                            <li class="nav-item nav-btn">
+                                {% if not request.user.is_authenticated %}
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Login</a>
+                                {% else %}
+                                    <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Logout</a>
+                                {% endif %}
+                            </li>
+
+                        </ul>
+                        <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="close-icon"></div>
+                        </button>
+
+                    </div>
                 </div>
-                <div class="mbr-table-cell">
 
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
-
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/about">About</a></li>
-                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/">Products</a></li>
-                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/service">Service</a></li>
-                        <li class="nav-item"><a class="nav-link link mbr-editable-menu-item" href="/pricing">Pricing</a></li>
-
-
-                        <!-- <li class="nav-item dropdown open">
-                            <a class="nav-link link dropdown-toggle mbr-editable-menu-item" href="index.html#pricing-table2-f" data-toggle="dropdown-submenu" aria-expanded="true">MORE</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item mbr-editable-menu-item" href="#">What's New</a>
-                                <a class="dropdown-item mbr-editable-menu-item" href="#">Features</a>
-                                <a class="dropdown-item mbr-editable-menu-item" href="#">Feedback</a>
-                                <a class="dropdown-item mbr-editable-menu-item" href=".#">Forum</a>
-                            </div>
-                        </li> -->
-
-
-                        <li class="nav-item nav-btn">
-                            {% if request.user.is_authenticated %}
-                                <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Login</a>
-                            {% else %}
-                                <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item" href="/login">Logout</a>
-                            {% endif %}
-                        </li>
-
-                    </ul>
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
-
-                </div>
             </div>
-
-        </div>
-    </nav>
-
-</section>
+        </nav>
+    </section>
 </div>
 
 <section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar" id="header2-1" style="background-image: url({% static '/assets/images/bg_header.jpg' %});">
