@@ -1,0 +1,124 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="{% static '/assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="Innstal">
+  <title>Innstal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="{% static '/assets/bootstrap-material-design-font/css/material.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/et-line-font-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/animate.css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <link rel="stylesheet" href="{% static '/assets_login/font-awesome/css/font-awesome.min.css' %}">
+
+  <link rel="stylesheet" href="{% static '/assets_login/css/form-elements.css' %}">
+
+  <script src="{% static '/assets/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static '/jquery-modal-master/jquery.modal.min.js' %}"></script>
+  <script src="{% static '/assets/tether/tether.min.js' %}"></script>
+  
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+<section class="container footer-bs" id="service">
+  <div class="row">
+      <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Brand</h4>
+          <div class="col-md-6" style="padding: 0px;">
+              <ul class="list">
+                  <li><a href="#">Acer</a></li>
+                  <li><a href="#">AEG</a></li>
+                  <li><a href="#">Asus</a></li>
+                  <li><a href="#">Black & Decker</a></li>
+                  <li><a href="#">Bosch</a></li>
+                  <li><a href="#">Brother</a></li>
+                  <li><a href="#">Canon</a></li>
+                  <li><a href="#">Casio</a></li>
+              </ul>
+          </div>
+          <div class="col-md-6" style="padding: 0px;">
+              <ul class="list">
+                  <li><a href="#">Epson</a></li>
+                  <li><a href="#">Frigidaire</a></li>
+                  <li><a href="#">Fujitsu</a></li>
+                  <li><a href="#">GE</a></li>
+                  <li><a href="#">Haier</a></li>
+                  <li><a href="#">Hitachi</a></li>
+                  <li><a href="#">Honda</a></li>
+                  <li><a href="#" style="color: #ff9837;">More</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="col-md-3 footer-nav animated fadeInLeft">
+          <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Company</h4>
+          <ul class="list">
+              <li><a href="/about">About us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Demo</a></li>
+              <li><a href="/service">Services</a></li>
+              <li><a href="#">Warranty</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Legal</a></li>
+          </ul>
+      </div>
+
+      <div class="col-md-5 footer-social animated fadeInDown">
+          <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Contact Detail</h4>
+          <ul>
+              <li>
+                <div class="row">
+                  <div class="col-md-6">
+                      <img src="{% static '/assets/images/img_phone.png' %}" style="margin-right: 10px;">+97 20 154 86951
+                      <p style="margin-left: 22px;">+97 20 154 86951</p>  
+                  </div>
+                  <div class="col-md-6">
+                      <p><img src="{% static '/assets/images/img_mail.png' %}" style="margin-right: 10px;">Info@innstal.com</p>
+                  </div>
+                </div>
+              </li>
+              
+              <li><img src="{% static '/assets/images/img_location.png' %}" style="margin-right: 10px;">Studio 103, The Business Centre, 61 Wellfield Road, Roath, Cardiff CF24 3DG</li>
+              
+          </ul>
+          <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Subscribe</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+          <input type="text" name="" style="width: 100%; height: 50px; padding-left: 20px; padding-right: 135px;" placeholder="Enter Your Email Address">
+          <div>
+          <div style="position: relative; top: -36px; left: -20px; float: right;">
+            <a href=""><p style="color: #ff9837"><img src="{% static '/assets/images/icon_subscribe.png' %}" style="width: 20px; height: 20px; margin-right: 15px;">Subscribe</p></a>
+          </div>
+          </div>
+      </div>
+     
+  </div>
+</section>
+
+  
+  
+  <script src="{% static '/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static '/assets/smooth-scroll/smooth-scroll.js' %}"></script>
+  <script src="{% static '/assets/dropdown/js/script.min.js' %}"></script>
+  <script src="{% static '/assets/touch-swipe/jquery.touch-swipe.min.js' %}"></script>
+  <script src="{% static '/assets/viewport-checker/jquery.viewportchecker.js' %}"></script>
+  <script src="{% static '/assets/jarallax/jarallax.js' %}"></script>
+  <script src="{% static '/assets/theme/js/script.js' %}"></script>
+
+  <input name="animation" type="hidden">
+</body>
+</html>

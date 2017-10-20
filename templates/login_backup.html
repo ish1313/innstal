@@ -1,0 +1,159 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login Innstal</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="{% static '/assets_login/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static '/assets_login/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static '/assets_login/css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static '/assets_login/css/style.css' %}">
+
+        <link rel="stylesheet" href="{% static '/jquery-modal-master/jquery.modal.css' %}">
+
+
+        <script src="{% static '/assets/web/assets/jquery/jquery.min.js' %}"></script>
+        <script src="{% static '/jquery-modal-master/jquery.modal.js' %}"></script>
+        <script src="{% static '/jquery-modal-master/jquery.modal.min.js' %}"></script>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{% static '/assets_login/ico/favicon.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static '/assets_login/ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static '/assets_login/ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static '/assets_login/ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static '/assets_login/ico/apple-touch-icon-57-precomposed.png' %}">
+
+        <link rel="stylesheet" href="{% static '/assets/theme/css/style.css' %}">
+        <link rel="stylesheet" href="{% static '/assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+        <style type="text/css">
+            .modal {
+                max-width: 1000px;
+            }
+            @media (max-width: 767px) {
+
+              #forget_pwd_email {
+                text-align: left !important;
+              }
+
+              #logo_innstal {
+                color: #ff9837 !important;
+              }
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        
+
+        <div id="forget_pwd" style="display: none;">
+            <h2 style="text-align: center; font-weight: bold;">Forget Password</h1>
+            <h3 style="text-align: center; font-weight: normal;">Forget your password? Don't panic it happend with anyone</h3>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12">
+                    <div class="col-md-7" style="text-align: right; padding: 0px;" id="forget_pwd_email">
+                        <input type="text" name="" placeholder="Enter Your Email" style="width: 60%; height: 50px;">
+                    </div>
+                    <div class="col-md-5" style="text-align: left; padding: 0px;">
+                        <a class="btn btn-orange" href="" style="border-radius: 2px; width: 50%; height: 50px; font-size: 20px; padding-top: 10px;">Submit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="text-align: center; padding-left: 20%; padding-right: 20%; margin-top:20px; margin-bottom: 30px;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqu ut enim ad mini.
+            </div>
+        </div>
+
+        
+        <div id="register" style="display:none;">
+            <form method="POST">
+                {% csrf_token %} 
+                <!-- <p>Thanks for clicking.  That felt good.  <a href="/login" rel="modal.close">Close</a> or press ESC</p> -->
+                <h1 style="text-align: center; font-weight: bold;">Sign Up to Innstal</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only" for="form-username">Username</label>
+                            <input type="text" name="form-username" placeholder="Enter Your Name" class="form-username form-control" id="form-username">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only" for="form-username">PhoneNumber1</label>
+                            <input type="text" name="form-username" placeholder="Enter Your Phone Number" class="form-username form-control" id="form-username">
+                        </div>
+                    </div>                                            
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only" for="form-username">PhoneNumber2</label>
+                            <input type="text" name="form-username" placeholder="Enter Your Phone Number" class="form-username form-control" id="form-username">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p>Date of Birth</p>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label class="sr-only" for="form-username">Day</label>
+                                    <input type="text" name="form-username" placeholder="DD" class="form-username form-control" id="form-username">        
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label class="sr-only" for="form-username">Month</label>
+                                    <input type="text" name="form-username" placeholder="MM" class="form-username form-control" id="form-username">        
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label class="sr-only" for="form-username">Year</label>
+                                    <input type="text" name="form-username" placeholder="YYYY" class="form-username form-control" id="form-username">        
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                            
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only" for="form-username">Password</label>
+                            <input type="text" name="form-username" placeholder="Password" class="form-username form-control" id="form-username">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label class="sr-only" for="form-username">PhoneNumber3</label>
+                            <input type="text" name="form-username" placeholder="Enter Your Phone Number" class="form-username form-control" id="form-username">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 70px;">
+                    I accept all <a href="" style="color: #ff9837">Terms & Condition</a>
+                </div>
+                <div class="row" style="text-align: center; margin-top: 20px;">
+                    <button type="submit" class="btn btn-orange" style="border-radius: 2px; width: 40%; height: 50px; font-size: 20px;">Register Now</button>
+                </div>
+                <div class="row">
+                    <p style="text-align: center;"><a href="" style="color: #ff9837; font-weight: bold; text-decoration: underline;">Already have Account Login Now</a></p>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- Javascript -->
+       
+        
+        <!--[if lt IE 10]>
+            <script src="{% static '/assets_login/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+     
+
+</html>

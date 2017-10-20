@@ -11,8 +11,12 @@ def index(request):
     # products = Product()
 
     # products = Product.objects.all()
+    context = {
+        'site_title': 'Innstal',
+        'page_title': 'Home'
+    }
 
-    return render(request, 'index.html', {})
+    return render(request, 'index.html', context)
 
 def SignUp(request):
     # if request.method == 'POST':
