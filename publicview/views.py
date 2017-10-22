@@ -19,18 +19,11 @@ def index(request):
     return render(request, 'index.html', context)
 
 def SignUp(request):
-    # if request.method == 'POST':
-    #     form = UserRegistrationForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         username = form.cleaned_data.get('username')
-    #         raw_password = form.cleaned_data.get('password1')
-    #         user = authenticate(username=username, password=raw_password)
-    #         login(request, user)
-    #         return redirect('/')
-    # else:
-    #     form = UserRegistrationForm()
-    return render(request, 'login.html', {})
+    context = {
+        'site_title': 'Innstal',
+        'page_title': 'SignUp'
+    }
+    return render(request, 'signup.html', context)
 
 
 def login(request):

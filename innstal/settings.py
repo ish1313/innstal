@@ -3,10 +3,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#p-z5!v=6)pbs2-##z+6k5$y__%3om%mm*!9@_$iu8=u4&#l$_'
 
@@ -15,11 +11,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
     'publicview',
+    'usms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -67,16 +63,20 @@ WSGI_APPLICATION = 'innstal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'data/db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'innstall2',
+        'USER': 'innstal',
+        'PASSWORD': 'qweqwe',
+        'HOST': '192.168.0.103',
+        'PORT': '5432',
     }
 }
 
-import dj_database_url
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+#
+# db_from_env = dj_database_url.config(conn_max_age=500)
+#
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -126,3 +126,4 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+AUTH_USER_MODEL = 'usms.InnstalUser'

@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #888;
+    color: #000;
     line-height: 30px;
     text-align: center;
     
@@ -16,6 +16,12 @@ nav {
 .header .container {
 	width: 85%;
 }
+.border-1 {
+	border: 1px solid #FFE;
+	padding: 5px 20px;
+	border-radius: 20px;
+	display: inline;
+}
 .header {
 	text-align: left;
 	color: #FFF;
@@ -28,6 +34,12 @@ nav {
 	font-weight: 300;
 	font-size: 2.50rem;
 }
+.signup_page {
+	background-image: url('/static/images/bg_login.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 500px;
+}
 input#search {
 	background-color: #FFF;
 	width: 70%;
@@ -36,5 +48,9 @@ input#search {
 
 button.rounded-20 {
 	border-radius: 20px;
+}
+section.how-it-works {
+	text-align: left;
+	background-color: lightblue;
 }
 
