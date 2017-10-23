@@ -11,7 +11,7 @@ from .models import *
 
 def signup(request):
     if request.method == 'POST':
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         first_name = request.POST.get('first_name')
