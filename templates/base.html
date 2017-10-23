@@ -11,29 +11,30 @@
     {% block page_meta %}{% endblock page_meta %}
 
     <title>{{ page_title }}</title>
-  
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-  
+
     <link rel="stylesheet" href="{% static '/css/materialize.css' %}">
     <link rel="stylesheet" href="{% static '/css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static '/fonts/font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
-    
+
     {% block page_css %}{% endblock page_css %}
 
     <script src="{% static '/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static '/js/tether.min.js' %}"></script>
 
     {% block page_head_js %}{% endblock page_head_js %}
-  
+
 </head>
 <body>
 
     {% block content %}{% endblock %}
 
-  
+
+    <script src="{% static '/js/materialize.min.js' %}"></script>
     <script src="{% static '/js/script.js' %}"></script>
     <input name="animation" type="hidden">
     {% block page_footer_js %}{% endblock page_footer_js %}

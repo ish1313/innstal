@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container signup_page">
+    <div class="row">
+		<div class="col s12">
+			<h2>innstal</h2>
+		</div>
+	</div>
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <form id="sign-form" action="/signup/" method="post">
+                {% csrf_token %}
+                {% include 'signup-form.html'%}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

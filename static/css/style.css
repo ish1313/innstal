@@ -5,7 +5,7 @@ body {
     color: #000;
     line-height: 30px;
     text-align: center;
-    
+
 }
 nav {
 	background-color: transparent !important;
@@ -38,7 +38,8 @@ nav {
 	background-image: url('/static/images/bg_login.jpg');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 500px;
+    height: 700px;
+    color: #FFF;
 }
 input#search {
 	background-color: #FFF;
@@ -53,4 +54,38 @@ section.how-it-works {
 	text-align: left;
 	background-color: lightblue;
 }
+/* login page */
+.login_page {
+    background-image: url('/static/images/bg_login.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 700px;
+    text-align: center;
+    color: #FFF;
+}
+.card-panel {
+    color: #000;
+}
+button.singup, button.login {
+    width: 90%;
+}
 
+.leftmenu {
+    background-color: #111;
+    color: #FFF;
+    width: 250px !important;
+}
+
+li.menu > a {
+    text-align: left;
+    color: #FFF !important;
+}
+.leftmenu img.circle {
+    margin: 0px auto;
+}
+.sidemenu {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    color: #FFF;
+}

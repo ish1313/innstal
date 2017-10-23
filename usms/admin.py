@@ -8,7 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 # from .forms import EmailUserChangeForm, EmailUserCreationForm
 from .models import InnstalUser
 
-
 class InnstalUserAdmin(UserAdmin):
 
     """InnstalUser Admin model."""
@@ -17,7 +16,7 @@ class InnstalUserAdmin(UserAdmin):
         (None, {'fields': ('email', 'password')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        # (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = ((
         None, {
