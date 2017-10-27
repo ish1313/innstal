@@ -19,17 +19,21 @@ def signup(request):
         terms = request.POST.get('terms')
         user_type = request.POST.get('user_type')
         password = request.POST.get('password2')
-        user = InnstalUser(email=email, first_name=first_name, last_name=last_name, phone=phone)
+        user = InnstalUser(email=email, first_name=first_name,
+                                        last_name=last_name, phone=phone, user_type=user_type)
         user.set_password(password)
         user.save()
-        if user.user_type == 1:
-            user.is_staff = True
+        if user.user_type == '1':
             user.is_active = True
+            user.is_staff = True
             user.is_superuser == False
             user.save()
             admin_login(request, user)
             return HttpResponseRedirect('/dashboard/account-details/')
-        elif user.user_type == 2:
+        elif user.user_type == '2':
+            user.is_active = True
+            user.is_staff = True
+            user.save()
             return HttpResponseRedirect('/')
 
 
