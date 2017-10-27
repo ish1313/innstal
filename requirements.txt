@@ -1,5 +1,6 @@
 dj-database-url==0.4.2
 Django==1.11.6
+django-summernote==0.8.8.2
 gunicorn==19.7.1
 olefile==0.44
 Pillow==4.3.0
