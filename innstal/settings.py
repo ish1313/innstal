@@ -68,16 +68,16 @@ WSGI_APPLICATION = 'innstal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'innstal2',
-#         'USER': 'innstal',
-#         'PASSWORD': 'qweqwe',
-#         'HOST': '192.168.0.103',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'innstal2',
+        'USER': 'innstal',
+        'PASSWORD': 'qweqwe',
+        'HOST': '192.168.0.103',
+        'PORT': '5432',
+    }
+}
 
 import dj_database_url
 
