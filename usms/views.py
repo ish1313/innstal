@@ -34,7 +34,11 @@ def login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(email=email, password=password)
-        admin_login(request, user)
+        try:
+            admin_login(request, user)
+        except Exception as e:
+            return HttpResponseRedirect('/login')
+
         return HttpResponseRedirect('/dashboard/')
     else:
         return render(request, 'login.html', {})
