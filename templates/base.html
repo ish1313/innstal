@@ -24,6 +24,9 @@
     {% block page_css %}{% endblock page_css %}
 
     <script src="{% static '/js/jquery-3.2.1.min.js' %}"></script>
+
+    <script src="{% static '/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static '/js/jquery.validate.min.js' %}"></script>
     <script src="{% static '/js/tether.min.js' %}"></script>
 
     {% block page_head_js %}{% endblock page_head_js %}
@@ -31,8 +34,11 @@
 </head>
 <body>
 
+{% block body_content %}
+    {% block header %}{% endblock %}
     {% block content %}{% endblock %}
-
+    {% block footer %}{% endblock %}
+{% endblock body_content %}
 
     <script src="{% static '/js/materialize.min.js' %}"></script>
     <script src="{% static '/js/script.js' %}"></script>

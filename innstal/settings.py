@@ -16,12 +16,14 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'publicview',
     'usms',
+    'product',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +74,7 @@ DATABASES = {
         'NAME': 'innstal2',
         'USER': 'innstal',
         'PASSWORD': 'qweqwe',
-        'HOST': '192.168.0.105',
+        'HOST': '192.168.0.103',
         'PORT': '5432',
     }
 }
@@ -138,7 +140,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 AUTH_USER_MODEL = 'usms.InnstalUser'

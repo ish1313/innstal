@@ -10,11 +10,33 @@
 	</div>
     <div class="row">
         <div class="col s8 offset-s2">
-            <form id="sign-form" action="/signup/" method="post">
+            <div class="card-panel">
+
+
+            <form id="msform" name="signup" action="/signup/" method="post">
                 {% csrf_token %}
-                {% include 'signup-form.html'%}
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Account Setup</li>
+                    <li>Social Profiles</li>
+                    <li>Personal Details</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    {% include "signup-form-usertype.html" %}
+                </fieldset>
+                <fieldset>
+                    {% include "signup-form-account-details.html" %}
+                </fieldset>
+                <fieldset>
+                    {% include "signup-form-final.html" %}
+                </fieldset>
+
+
             </form>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

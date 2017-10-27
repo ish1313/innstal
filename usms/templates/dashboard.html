@@ -1,41 +1,57 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block content %}
+{% block body_content %}
 <div class="row">
+    {% block leftpane %}
     <div class="col s2 sidemenu">
         <ul id="slide-in" class="side-nav fixed leftmenu">
             <li>
                 <div class="user-view" style="text-align: center">
 
                     <h4>innstal</h4>
-                    <a href="#!user"><img class="circle" src="/static/images/yuna.jpg"></a>
-                    <a href="#!name"><span class="white-text name">{{request.user.first_name }} {{request.user.last_name }}</span></a>
-                    <a href="#!email"><span class="white-text email">{{ request.user.email }}</span></a>
+                    <a href="/dashboard/account-details/">
+                        {% if request.user.avatar %}
+                            <img class="circle responsive-img" src="/media/{{ request.user.avatar }}">
+                        {% else %}
+                            <img class="circle responsive-img" src="/static/images/avatar.png">
+                        {% endif %}
+                    </a>
+                    <a href="/dashboard/account-details/"><span class="white-text name">{{request.user.first_name }} {{request.user.last_name }}</span></a>
+                    <a href="/dashboard/account-details/"><span class="white-text email">{{ request.user.email }}</span></a>
                 </div>
             </li>
             <li><div class="divider"></div></li>
             <li class="menu"><a href="/dashboard"><i class="material-icons">apps</i>Dashboard</a></li>
             <li class="menu"><a href="/product-manual/"><i class="material-icons">event_note</i>Product Manual</a></li>
             <li class="menu"><a href="#!"><i class="material-icons">history</i>Claim Your Warranty</a></li>
+            {% if user.user_type == '2 '%}
+            <li class="menu"><a href="/subscription/"><i class="material-icons">history</i>Subscription</a></li>
+            {% endif %}
         </ul>
-
     </div>
+    {% endblock leftpane %}
+
+
     <div class="col s10">
+        {% block header %}
         <div class="row">
+
             <div class="col s10 left-align">
                 <b>Hello, {{ request.user.first_name }} {{ request.user.last_name }}</b>
             </div>
             <div class="col s2 right-align">
                 <a class="black-text" href="/logout">Logout</a>
             </div>
+
         </div>
+        {% endblock header %}
         <div class="divider"></div>
         <div class="row">
             <div class="col s12">
-                {% block rightpane %}
+                {% block content %}
                     {% include "partials/category-browse.html" %}
-                {% endblock rightpane %}
+                {% endblock content %}
             </div>
         </div>
     </div>

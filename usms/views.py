@@ -17,16 +17,24 @@ def signup(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         terms = request.POST.get('terms')
+        user_type = request.POST.get('user_type')
         password = request.POST.get('password2')
         user = InnstalUser(email=email, first_name=first_name, last_name=last_name, phone=phone)
         user.set_password(password)
         user.save()
-        return HttpResponseRedirect('/login/')
+        if user.user_type == 1:
+            user.is_staff = True
+            user.is_active = True
+            user.is_superuser == False
+            user.save()
+            admin_login(request, user)
+            return HttpResponseRedirect('/dashboard/account-details/')
+        elif user.user_type == 2:
+            return HttpResponseRedirect('/')
+
 
     else:
         return render(request, 'signup.html', {})
-
-
 
 def login(request):
     if request.method == 'POST':
@@ -34,17 +42,33 @@ def login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         user = authenticate(email=email, password=password)
+
         try:
             admin_login(request, user)
+            if user.is_superuser == True:
+                return HttpResponseRedirect('/admin/')
+            if user.is_active == True and user.is_staff == True:
+                return HttpResponseRedirect('/dashboard/')
+
         except Exception as e:
             return HttpResponseRedirect('/login')
-
-        return HttpResponseRedirect('/dashboard/')
     else:
         return render(request, 'login.html', {})
 
 def dashboard(request):
-    return render(request, 'dashboard.html', {})
+    # import pdb; pdb.set_trace()
+    user = request.user
+    if user.user_type == '2' and user.is_active_subscription == False:
+        return HttpResponseRedirect('/subscription/')
+    else:
+        return render(request, 'dashboard.html', {})
+
+def subscription(request):
+    return render(request, 'subscription.html', {})
+
+
+def account_details(request):
+    return render (request, 'dashboard/account_details.html', {})
 
 def product_manual(request):
     return render(request, 'product-manual.html', {})
