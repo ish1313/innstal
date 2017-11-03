@@ -2,18 +2,15 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-
+from product.models import ProductCategory
 # Create your views here.
 
 def index(request):
-    # return HttpResponse('Hello from Python!')
-
-    # products = Product()
-
-    # products = Product.objects.all()
+    categories = ProductCategory.objects.all()[:8]
     context = {
         'site_title': 'Innstal',
-        'page_title': 'Home'
+        'page_title': 'Home',
+        'categories': categories
     }
 
     return render(request, 'index.html', context)
@@ -51,4 +48,3 @@ def search_result(request):
     # products = Product.objects.all()
 
     return render(request, 'search_result.html', {})
-

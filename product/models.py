@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.utils.translation import ugettext_lazy as _
 
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
 
 from django.db import models
 from usms.models import *
@@ -16,9 +18,19 @@ class Company(models.Model):
     def __unicode__(self):
         return self.name
 
+def category_directory_path(instance, filename):
+    name = instance.name
+
+    filepath = 'product/category/'
+
+    filepath = filepath + name + filename[-4:]
+
+    return filepath
 
 class ProductCategory(models.Model):
     name = models.CharField(_('Product Category'), max_length=50, db_index=True)
+    category_image = ProcessedImageField(upload_to=category_directory_path,
+        processors=[ResizeToFill(200, 150)], format='JPEG', options={'quality': 80}, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
@@ -74,9 +86,24 @@ class Product(models.Model):
     product_model = models.ForeignKey(ProductModel, blank=True, null=True)
     warranty_duration = models.DurationField(default=2000, blank=True, null=True)
     installation_instruction = models.TextField(max_length=500, blank=True, null=True)
-    product_image1 = models.ImageField(upload_to=product_directory_path)
-    product_image2 = models.ImageField(upload_to=product_directory_path, blank=True, null=True)
+    product_image1 = ProcessedImageField(upload_to=product_directory_path,
+        processors=[ResizeToFill(200, 150)], format='JPEG', options={'quality': 80})
+    product_image2 = ProcessedImageField(upload_to=product_directory_path,
+        processors=[ResizeToFill(200, 150)], format='JPEG', options={'quality': 80}, blank=True, null=True)
+
     product_manual = models.FileField(upload_to=product_directory_path, blank=True, null=True)
+    product_search_string = models.TextField(max_length=500, blank=True, null=True, editable=False)
 
     def __unicode__(self):
         return self.product_name
+
+    def save(self, *args, **kwargs):
+
+        string = self.product_name + " "
+        if self.company:
+            string += self.company.name + " "
+
+        if self.product_category:
+            string += self.product_category.name + " "
+        self.product_search_string = string
+        super(Product, self).save(*args, **kwargs)

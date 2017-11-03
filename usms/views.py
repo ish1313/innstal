@@ -74,5 +74,6 @@ def subscription(request):
 def account_details(request):
     return render (request, 'dashboard/account_details.html', {})
 
-def product_manual(request):
-    return render(request, 'product-manual.html', {})
+def search_product_manual(request):
+    import pdb; pdb.set_trace()
+    return render(request, 'product-manual-search.html', {})

@@ -1,0 +1,4 @@
+For Customer:
+
+1. Can search for product manual (no login required)
+2. 

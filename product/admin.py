@@ -19,10 +19,19 @@ class ProductAdmin(SummernoteModelAdmin):
 class CompanyAdmin(SummernoteModelAdmin):
     list_display = ['name', 'company_phone', 'address']
 
+class ProductCategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'product_image']
+
+    def product_image(self, obj):
+        if obj.category_image:
+            img_tag = format_html('<img src="{}" width="100" height="100" />'.format(obj.category_image.url))
+        else:
+            img_tag = format_html('<img src="/static/images/product-avatar.png" width="100" height="100" />')
+        return img_tag
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Company, CompanyAdmin)
-admin.site.register(ProductCategory)
+admin.site.register(ProductCategory, ProductCategoryAdmin)
 admin.site.register(ProductType)
 admin.site.register(ProductModel)
 admin.site.register(ProductBrand)

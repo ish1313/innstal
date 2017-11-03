@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col s12">
-                <button class="btn rounded-20">Browse All Category</button>
+                <a href="/product/categories/" class="btn rounded-20">Browse All Category</button>
             </div>
         </div>
     </section>
@@ -37,8 +37,9 @@
 {% endblock %}
 
 {% block footer %}
-<section class="container" id="footer">
-    {% include "partials/footer.html" %}
-</section>
-
+    <div id="footer">
+        <section class="container">
+            {% include "partials/footer.html" %}
+        </section>
+    </div>
 {% endblock %}
