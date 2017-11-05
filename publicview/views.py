@@ -8,12 +8,12 @@ from .models import *
 
 def index(request):
     categories = ProductCategory.objects.all()[:8]
-    blog = HomeBlog.objects.all()
+    blog = HomeBlog.objects.all()[0]
     context = {
         'site_title': 'Innstal',
         'page_title': 'Home',
         'categories': categories,
-        'blog': blog[0]
+        'blog': blog
     }
 
     return render(request, 'index.html', context)
