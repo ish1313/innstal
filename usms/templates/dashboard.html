@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block body_content %}
+{% block content %}
 <div class="row">
     {% block leftpane %}
     <div class="col s2 sidemenu">
@@ -23,7 +23,7 @@
             </li>
             <li><div class="divider"></div></li>
             <li class="menu"><a href="/dashboard"><i class="material-icons">apps</i>Dashboard</a></li>
-            <li class="menu"><a href="/product-manual/"><i class="material-icons">event_note</i>Product Manual</a></li>
+            <li class="menu"><a href="/product/manual/"><i class="material-icons">event_note</i>Product Manual</a></li>
             <li class="menu"><a href="#!"><i class="material-icons">history</i>Claim Your Warranty</a></li>
             {% if user.user_type == '2 '%}
             <li class="menu"><a href="/subscription/"><i class="material-icons">history</i>Subscription</a></li>
@@ -34,7 +34,7 @@
 
 
     <div class="col s10">
-        {% block header %}
+        {% block headerdas %}
         <div class="row">
 
             <div class="col s10 left-align">
@@ -45,13 +45,13 @@
             </div>
 
         </div>
-        {% endblock header %}
+        {% endblock headerdas %}
         <div class="divider"></div>
         <div class="row">
             <div class="col s12">
-                {% block content %}
-                    {% include "partials/category-browse.html" %}
-                {% endblock content %}
+                {% block contentdas %}
+                    {% include "dashboard/registered-products.html" %}
+                {% endblock contentdas %}
             </div>
         </div>
     </div>

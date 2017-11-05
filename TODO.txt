@@ -1,4 +1,13 @@
 For Customer:
 
 1. Can search for product manual (no login required)
-2. 
+2. can browse/filter product by category
+2. can download product manual and installation instruction
+3. Can register for a product warranty (need login)
+4. Can claim for a product warranty which was registered
+5. Can see the list of product registered
+6.
+
+For business:
+1. Can register and login
+2.

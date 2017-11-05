@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block header %}
+<div class="header">
+    <nav class="">
+        {% include "partials/top-nav.html" %}
+    </nav>
+    <header class="container">
+        {% include "partials/top-header.html" %}
+    </header>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+        {{ products }}
+        <form action="/product/register-warranty/" method="post">
+            {% csrf_token %}
+            {% include "register-warranty-form.html" %}
+        </form>
+
+    </section>
+
+{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <section class="container">
+            {% include "partials/footer.html" %}
+        </section>
+    </div>
+{% endblock %}

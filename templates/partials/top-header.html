@@ -3,7 +3,11 @@
         <h3>Looking for Instruction Manual</h3>
 
         <div class="mbr-section-text" style="margin-top:20px; text-align: left;">
+            {% if blog.looking_for_instruction %}
+                {{ blog.looking_for_instruction | safe }}
+            {% else %}
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.&nbsp;</p>
+            {% endif %}
         </div>
 
         <form action="/product/search/manual/" method="post">
@@ -19,13 +23,16 @@
         <H3>Want to Register your Warrenty Card</H3>
 
         <div class="mbr-section-text" style="margin-top:20px; text-align: left;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.&nbsp;</p>
+        {% if blog.want_to_register_your_warranty_car %}
+            {{ blog.want_to_register_your_warranty_car | safe }}
+        {% else %}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.</p>
+        {% endif %}
         </div>
 
-
-        <button class="btn orange waves-effect waves-light rounded-20" type="submit" name="action">
+        <a class="btn orange waves-effect waves-light rounded-20" href="/product/register-warranty/">
             Register Now
-        </button>
+        </a>
 
     </div>
 </div>

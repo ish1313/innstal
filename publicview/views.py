@@ -3,14 +3,17 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from product.models import ProductCategory
+from .models import *
 # Create your views here.
 
 def index(request):
     categories = ProductCategory.objects.all()[:8]
+    blog = HomeBlog.objects.all()
     context = {
         'site_title': 'Innstal',
         'page_title': 'Home',
-        'categories': categories
+        'categories': categories,
+        'blog': blog[0]
     }
 
     return render(request, 'index.html', context)

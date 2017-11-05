@@ -1,0 +1,15 @@
+<div class="row">
+    {% for product in products %}
+    <div class="col s6 m3">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ product.product_image1.url }}">
+            </div>
+            <div class="card-action">
+                <a href="/product/{{product.id}}/details/">{{ product.product_name }}</a>
+                <a href="/product/{{product.id}}/claim-warranty/">Claim Warranty</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

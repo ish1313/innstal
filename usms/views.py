@@ -7,6 +7,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 
 from .models import *
+from warrenty.models import *
+from product.models import *
 # Create your views here.
 
 def signup(request):
@@ -65,7 +67,10 @@ def dashboard(request):
     if user.user_type == '2' and user.is_active_subscription == False:
         return HttpResponseRedirect('/subscription/')
     else:
-        return render(request, 'dashboard.html', {})
+        # warranties = RegisterWarrenty.objects.filter(buyer=user)
+        # prods = [p for ]
+        registered_products = Product.objects.all()
+        return render(request, 'dashboard.html', {'products': registered_products})
 
 def subscription(request):
     return render(request, 'subscription.html', {})

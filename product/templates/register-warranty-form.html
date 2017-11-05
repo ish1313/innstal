@@ -1,0 +1,56 @@
+<div class="card-panel">
+    <div class="row">
+        <div class="col s12">
+            <h2 class="fs-title">Register For Warranty</h2>
+        </div>
+    </div>
+    <div class="row">
+        <input type="hidden" name="buyer" value="{{request.user}}" />
+        <div class="input-field col s6">
+            <select name="product">
+                {% for product in products %}
+                    <option value="{{ product.id }}">{{ product.product_name }}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+        <div class="input-field col s6">
+            <input id="product_code_name" name="product_code_name" type="text" class="validate">
+            <label for="product_code_name">Product Code Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="product_serial" name="product_serial" type="text" class="validate">
+            <label for="product_serial">Product Serial No</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="shop_name" type="text" name="shop_name" class="validate">
+            <label for="shop_name" data-error="wrong" data-success="right">Shop Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="shop_address" name="shop_address" type="text" class="validate">
+            <label for="shop_address">Shop Address</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="purchase_date" type="text" name="purchase_date" class="validate">
+            <label for="purchase_date" data-error="wrong" data-success="right">Purchase Date</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="warranty_card_image" name="warranty_card_image" type="file">
+            <label for="warranty_card_image">Upload warranty card</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <button class="btn btn-large orange register" type="submit">
+                Register Now
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -31,7 +31,10 @@
                     <img src="{{ product.product_image1.url }}">
                 </div>
                 <div class="card-action">
-                    <a href="#">{{ product.product_name }}</a>
+                    <a href="/product/{{ product.id }}/">{{ product.product_name }}</a>
+                    {% if product.product_manual %}
+                        <a target="_blank" href="{{ product.product_manual.url }}/">Manual</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
