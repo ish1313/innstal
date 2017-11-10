@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': 'innstal2',
         'USER': 'innstal',
         'PASSWORD': 'qweqwe',
-        'HOST': '192.168.0.104',
+        'HOST': '192.168.0.103',
         'PORT': '5432',
     }
 }

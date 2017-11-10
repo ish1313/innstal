@@ -25,6 +25,12 @@ def product_category(request):
     return render(request, 'product-categories.html', {'categories': categories})
 
 
+def category_products(request, category_id):
+    category = ProductCategory.objects.get(id=category_id)
+    products = Product.objects.filter(product_category=category)
+    return render(request, 'category-products.html', {"products": products, 'category': category})
+
+
 def product_register_warranty(request):
     current_user = request.user
     if not current_user.is_authenticated():
