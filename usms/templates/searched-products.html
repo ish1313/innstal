@@ -1,87 +1,14 @@
 {% load staticfiles %}
 
+{% for product in products %}
     <div class="col s6 m3">
         <div class="card">
             <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_laptop.jpg">
+                <img class="materialboxed" src="{{ product.product_image1.url }}">
             </div>
             <div class="card-action">
-                <a href="#">Laptop</a>
+                <a href="#">{{ product.product_name }}</a>
             </div>
         </div>
     </div>
-
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_mobile.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Mobile</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_watch.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Smart Watch</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_digital_camera.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Digital Camera</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_video_camera.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Video Camera</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_lighter.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Zippo Lighter</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_energy_saving.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Energy Saving</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                <img class="materialboxed" src="/static/images/img_drone.jpg">
-            </div>
-            <div class="card-action">
-                <a href="#">Drone</a>
-            </div>
-        </div>
-    </div>
+{% endfor %}

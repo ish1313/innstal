@@ -18,7 +18,7 @@ def search_product_manual(request):
         return render(request, 'dashboard/product-manual-search.html',
                 {"products": products, 'qstring': qstring})
     else:
-        return render(request, 'product-manual-search.html', {})
+        return render(request, 'product-manual-search.html', {"products": products, 'qstring': qstring})
 
 def product_category(request):
     categories = ProductCategory.objects.all()

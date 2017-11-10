@@ -19,6 +19,7 @@ body {
     background-color: #000;
     opacity: 0.8;
     color: #FFF;
+    padding: 10px !important;
 }
 .pulse {
     color: #FE9B02;

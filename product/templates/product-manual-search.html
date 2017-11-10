@@ -11,15 +11,15 @@
 
 
 {% block content %}
+<div class="row search_header">
+        <h5 class="center-align" style="margin-top:0px;">Showing Results For "<span class="pulse">{{qstring}}</span>"</h5>
+</div>
 <div class="container">
+
     <div class="row">
-        <div class="col s6 white darken-5">
-            <form action="/product/search/manual/" method="post">
-                {% csrf_token %}
-                <div class="input-field">
-                    <input id="search" type="text" name="search" class="validate">
-                    <label for="search">Search for product manual</label>
-                </div>
+        <div class="col s4 push-s4 search_box">
+            <form action="/product/search-manual/" method="get">
+                <input type="search" name="search" placeholder="search" />
             </form>
         </div>
     </div>
