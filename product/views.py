@@ -7,12 +7,18 @@ from .models import *
 # Create your views here.
 
 def search_product_manual(request):
-    qstring = request.POST.get('search')
+    # import pdb; pdb.set_trace()
+    qstring = request.GET.get('search')
     if qstring:
         products = Product.objects.filter(product_search_string__icontains=qstring)
     else:
         products = []
-    return render(request, 'product-manual-search.html', {"products": products})
+
+    if request.user.is_authenticated():
+        return render(request, 'dashboard/product-manual-search.html',
+                {"products": products, 'qstring': qstring})
+    else:
+        return render(request, 'product-manual-search.html', {})
 
 def product_category(request):
     categories = ProductCategory.objects.all()

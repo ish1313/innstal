@@ -1,12 +1,31 @@
+
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    /*font-size: 16px;
     font-weight: 300;
-    color: #000;
+    color: #000;*/
     line-height: 30px;
     /*text-align: center;*/
-    background-color: #EEE;
+    background-color: #FFF;
 
+}
+.dashboard_content {
+    padding: 5px 30px !important;
+    background-color: #FFF !important;
+}
+.search_header {
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    opacity: 0.8;
+    color: #FFF;
+}
+.pulse {
+    color: #FE9B02;
+}
+a.product:hover {
+    background-color: #FE9B02;
+    opacity: 0.5;
 }
 nav {
 	background-color: transparent !important;

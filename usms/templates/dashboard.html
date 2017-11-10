@@ -9,7 +9,7 @@
             <li>
                 <div class="user-view" style="text-align: center">
 
-                    <h4>innstal</h4>
+                    <h4><a href="/">innstal</a></h4>
                     <a href="/dashboard/account-details/">
                         {% if request.user.avatar %}
                             <img class="circle responsive-img" src="/media/{{ request.user.avatar }}">
@@ -22,18 +22,18 @@
                 </div>
             </li>
             <li><div class="divider"></div></li>
-            <li class="menu"><a href="/dashboard"><i class="material-icons">apps</i>Dashboard</a></li>
-            <li class="menu"><a href="/product/manual/"><i class="material-icons">event_note</i>Product Manual</a></li>
-            <li class="menu"><a href="#!"><i class="material-icons">history</i>Claim Your Warranty</a></li>
+            <li class="menu"><a href="/dashboard"><i class="material-icons white-text">home</i>Dashboard</a></li>
+            <li class="menu"><a href="/dashboard/product-manual/"><i class="material-icons white-text">event_note</i>Product Manual</a></li>
+            <li class="menu"><a href="/dashboard/warranties/"><i class="material-icons white-text">history</i>Warranty</a></li>
             {% if user.user_type == '2 '%}
-            <li class="menu"><a href="/subscription/"><i class="material-icons">history</i>Subscription</a></li>
+            <li class="menu"><a href="/subscription/"><i class="material-icons white-text">history</i>Subscription</a></li>
             {% endif %}
         </ul>
     </div>
     {% endblock leftpane %}
 
 
-    <div class="col s10">
+    <div class="col s10 dashboard_content">
         {% block headerdas %}
         <div class="row">
 
@@ -48,11 +48,16 @@
         {% endblock headerdas %}
         <div class="divider"></div>
         <div class="row">
-            <div class="col s12">
-                {% block contentdas %}
-                    {% include "dashboard/registered-products.html" %}
-                {% endblock contentdas %}
-            </div>
+            {% block contentdas %}
+                <div class="col s12">
+                    <h5>Registered Warranty Products</h5>
+                </div>
+                {% include "dashboard/registered-products.html" %}
+                <div class="col s12">
+                    <h5>Recently Product Manual Reviewed</h5>
+                </div>
+                {% include "dashboard/reviewed-products.html" %}
+            {% endblock contentdas %}
         </div>
     </div>
 </div>

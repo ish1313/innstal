@@ -95,3 +95,7 @@ $(".previous").click(function(){
 // $(".submit").click(function(){
 //     return false;
 // })
+
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+});

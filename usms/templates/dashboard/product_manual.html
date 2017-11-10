@@ -1,0 +1,18 @@
+{% extends "dashboard.html" %}
+{% load staticfiles %}
+
+{% block contentdas %}
+<div class="col s12">
+    <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#reviewed">Reviewed</a></li>
+        <li class="tab col s3"><a href="#downloaded">Downloaded</a></li>
+    </ul>
+</div>
+<div id="reviewed" class="col s12">
+    {% include "dashboard/reviewed-products.html" %}
+</div>
+<div id="downloaded" class="col s12">
+    {% include "dashboard/downloaded-products.html" %}
+</div>
+
+{% endblock contentdas %}

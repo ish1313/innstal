@@ -1,0 +1,20 @@
+{% extends "dashboard.html" %}
+{% load staticfiles %}
+
+{% block contentdas %}
+    <div class="row search_header">
+        <div class="col s12">
+            <h5 class="center-align">Showing Results For "<span class="pulse">{{qstring}}</span>"</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4 center-align search_box">
+            <form action="/product/search-manual/" method="get">
+                {% csrf_token %}
+                <input type="search" name="search" />
+        </div>
+    </div>
+    <div class="row">
+        {% include "searched-products.html" %}
+    </div>
+{% endblock contentdas %}

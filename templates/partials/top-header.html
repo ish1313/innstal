@@ -10,7 +10,7 @@
             {% endif %}
         </div>
 
-        <form action="/product/search/manual/" method="post">
+        <form action="/product/search-manual/" method="get">
             {% csrf_token %}
             <div class="input-field">
                 <input id="search" type="text" name="search" class="validate" style="color: #000; padding: 2px 10px;">

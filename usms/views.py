@@ -72,6 +72,12 @@ def dashboard(request):
         registered_products = Product.objects.all()
         return render(request, 'dashboard.html', {'products': registered_products})
 
+def ds_product_manual(request):
+    return render(request, 'dashboard/product_manual.html')
+
+def ds_warranties(request):
+    return render(request, 'dashboard/warranty.html')
+
 def subscription(request):
     return render(request, 'subscription.html', {})
 
@@ -80,5 +86,7 @@ def account_details(request):
     return render (request, 'dashboard/account_details.html', {})
 
 def search_product_manual(request):
-    import pdb; pdb.set_trace()
-    return render(request, 'product-manual-search.html', {})
+    if request.user.is_authenticated:
+        return render(request, 'dashboard/product-manual-search.html', {})
+    else:
+        return render(request, 'product-manual-search.html', {})
