@@ -77,6 +77,7 @@ def product_directory_path(instance, filename):
     return filepath
 
 
+
 class Product(models.Model):
     product_name = models.CharField(_('Product Name'), max_length=50, db_index=True)
     company = models.ForeignKey(Company, blank=True, null=True)
@@ -84,7 +85,7 @@ class Product(models.Model):
     product_type = models.ForeignKey(ProductType, blank=True, null=True)
     product_brand = models.ForeignKey(ProductBrand, blank=True, null=True)
     product_model = models.ForeignKey(ProductModel, blank=True, null=True)
-    warranty_duration = models.DurationField(default=2000, blank=True, null=True)
+    warranty_duration = models.CharField(_('Warranty In Days'), max_length=5, blank=True, null=True)
     installation_instruction = models.TextField(max_length=500, blank=True, null=True)
     product_image1 = ProcessedImageField(upload_to=product_directory_path,
         processors=[ResizeToFill(200, 150)], format='JPEG', options={'quality': 80})
@@ -107,3 +108,16 @@ class Product(models.Model):
             string += self.product_category.name + " "
         self.product_search_string = string
         super(Product, self).save(*args, **kwargs)
+
+
+class ProductReview(models.Model):
+    product = models.ForeignKey(Product)
+    writer = models.ForeignKey(InnstalUser)
+    review = models.TextField(max_length=250)
+    review_date = models.DateTimeField(auto_now_add=True, editable=False)
+
+
+class ProductVisited(models.Model):
+    product = models.ForeignKey(Product)
+    visitor = models.ForeignKey(InnstalUser)
+    visite_date = models.DateTimeField(auto_now_add=True, editable=False)

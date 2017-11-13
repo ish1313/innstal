@@ -1,16 +1,57 @@
 <div class="row">
-    {% for product in products %}
+    {% for warranty in registered_products %}
     <div class="col s6 m3">
-        <a class="product" href="/product/{{product.id}}/details/">
-            <div class="card">
+            {% if warranty.warranty_status == '3' %}
+                <div class="card red">
+            {% else %}
+                <div class="card">
+            {% endif %}
                 <div class="card-image">
-                    <img class="materialboxed" src="{{ product.product_image1.url }}">
+                    <img class="materialboxed" src="{{ warranty.product.product_image1.url }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ warranty.product.product_name }}<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal" style="padding:0px;">
+                    <ul class="collection with-header" style="margin:0px;">
+
+                        <li class="collection-header">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                            <a class="product" href="/product/{{warranty.product.id}}/details/">
+                                {{ warranty.product.product_name|upper }}
+                            </a>
+                        </li>
+                        <li class="collection-item"><b>Shop</b>: {{ warranty.shop_name }}</li>
+                        <li class="collection-item"><b>Buy Date</b>: {{ warranty.purchase_date }}</li>
+                        <li class="collection-item"><b>Exp. Date</b>: {{ warranty.warranty_expire_date }}</li>
+                        <li class="collection-item"><b>Serial</b>: {{ warranty.product_serial }}</li>
+                    </ul>
                 </div>
                 <div class="card-action">
-                    {{ product.product_name }}
+                    {% if warranty.warranty_status == '3' %}
+                    <div class="chip">
+                        Warranty Expired
+                    </div>
+                    {% elif warranty.warranty_status == '4' %}
+                    <div class="chip teal">
+                        Warranty Claimed
+                    </div>
+                    {% elif warranty.warranty_status == '5' %}
+                    <div class="chip yellow lighten-1">
+                        Claim Reviewing
+                    </div>
+                    {% elif warranty.warranty_status == '6' %}
+                    <div class="chip red lighten-1">
+                        Claim Rejected
+                    </div>
+                    {% else %}
+                        <a href="/product/{{warranty.id}}/claim-warranty/">Calim Warranty</a>
+                    {% endif %}
                 </div>
             </div>
-        </a>
+
     </div>
+    {% empty %}
+        <h5>No Products Found</h5>
     {% endfor %}
 </div>

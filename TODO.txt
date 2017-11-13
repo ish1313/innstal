@@ -11,3 +11,23 @@ For Customer:
 For business:
 1. Can register and login
 2.
+
+Guest User:
+1. In search products box type 'samsung' and press enter
+system will return all products which matches 'samsung' keyword
+
+2. In home page Click product category name it will redirect to a page which will Show
+all products with the same category
+
+Customer (logged in as customer):
+can search and also go for category product like gust user but with different page design (inside dashboard)
+
+> Click 'innstall' in dashboard (after login as customer user) with take you to home page
+
+> If you click 'user avatar or user name or email ' it will give you options to edit & update
+user details
+
+> Click "Product Manual" in dashboard
+> Click Warranty" in dashboard
+
+> For every product list page if you hover over image you can zoom product image

@@ -88,7 +88,6 @@ class Service(models.Model):
     def __unicode__(self):
         return self.name
 
-
 class Subscription(models.Model):
     package = models.ForeignKey(Package)
     user = models.ForeignKey(InnstalUser)

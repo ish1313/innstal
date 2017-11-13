@@ -1,0 +1,67 @@
+<div class="card-panel">
+    <div class="row">
+        <div class="input-field col s6">
+            <select name="product">
+                {% for product in products %}
+                    <option value="{{ product.id }}">{{ product.product_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-field col s6">
+            <input id="product_serial" name="product_serial" type="text" class="validate">
+            <label for="product_serial">Product Serial No</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="shop_name" type="text" name="shop_name" class="validate">
+            <label for="shop_name" data-error="wrong" data-success="right">Shop Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input type="text" name="purchase_date" id="purchase_date" class="datepicker">
+            <label for="purchase_date" data-error="wrong" data-success="right">Purchase Date</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <textarea id="shop_address" name="shop_address" class="materialize-textarea"></textarea>
+            <label for="shop_address">Shop Address</label>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Upload warranty card</span>
+                    <input type="file" name="warranty_card_image">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4 offset-s8">
+            <input type="hidden" name="buyer" value="{{ request.user}}" />
+            <button class="btn btn-large orange register" type="submit">
+                Register Now
+            </button>
+        </div>
+    </div>
+
+</div>
+<script>
+$(document).ready(function(){
+    $('select').material_select();
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+});
+</script>

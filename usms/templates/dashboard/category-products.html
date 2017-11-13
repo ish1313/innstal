@@ -1,30 +1,20 @@
-{% extends "index.html" %}
+{% extends "dashboard.html" %}
 {% load staticfiles %}
 
-{% block header %}
-<div class="navbar-fixed orange darken-2">
-    <nav class="">
-        {% include "partials/top-nav.html" %}
-    </nav>
-</div>
-{% endblock %}
 
-
-{% block content %}
+{% block contentdas %}
 <div class="row search_header">
     <h5 class="center-align" style="margin-top:0px;">Showing Results For Category "<span class="pulse">{{category.name}}</span>"</h5>
 </div>
-<div class="container">
-    <div class="row">
         {% for product in products %}
-        <div class="col s2 product-image">
+        <div class="col s3 product-image">
             <div class="card">
                 <div class="card-image">
                     <img class="materialboxed" src="{{ product.product_image1.url }}">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{ product.product_name }}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="/product/{{ product.id }}/">{{ product.product_name }}</a></p>
+                    <p><a href="/product/{{ product.id }}/details/">{{ product.product_name }}</a></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ product.product_name }}<i class="material-icons right">close</i></span>
@@ -52,6 +42,4 @@
             <h4>No data found</h4>
         </div>
         {% endfor %}
-    </div>
-</div>
-{% endblock content %}
+{% endblock contentdas %}

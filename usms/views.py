@@ -35,6 +35,7 @@ def signup(request):
         elif user.user_type == '2':
             user.is_active = True
             user.is_staff = True
+            user.is_superuser == False
             user.save()
             return HttpResponseRedirect('/')
 
@@ -67,16 +68,22 @@ def dashboard(request):
     if user.user_type == '2' and user.is_active_subscription == False:
         return HttpResponseRedirect('/subscription/')
     else:
-        # warranties = RegisterWarrenty.objects.filter(buyer=user)
+        registered_products = RegisterWarrenty.objects.filter(buyer=user)
         # prods = [p for ]
-        registered_products = Product.objects.all()
-        return render(request, 'dashboard.html', {'products': registered_products})
+        # registered_products = Product.objects.filter(registerwarrenty__buyer=user)
+        return render(request, 'dashboard.html',
+                {'registered_products': registered_products})
 
 def ds_product_manual(request):
     return render(request, 'dashboard/product_manual.html')
 
 def ds_warranties(request):
-    return render(request, 'dashboard/warranty.html')
+    user = request.user
+    registered_products = RegisterWarrenty.objects.filter(buyer=user)
+    cwproducts = []
+    cwproducts = ClaimProductWarranty.objects.filter(product__in=registered_products)
+    return render(request, 'dashboard/warranty.html',
+            {'registered_products': registered_products, 'cwproducts': cwproducts})
 
 def subscription(request):
     return render(request, 'subscription.html', {})
