@@ -101,7 +101,8 @@ def user_subscribe(request, package_id):
     user.save()
     return HttpResponseRedirect("/dashboard/")
 
-
+def subscription(request):
+    return render(request, 'subscription.html', {})
 
 def account_details(request):
     return render (request, 'dashboard/account_details.html', {})
