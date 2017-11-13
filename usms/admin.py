@@ -32,8 +32,8 @@ class InnstalUserAdmin(UserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    
-    list_display = ('email', 'first_name', 'is_active_subscription')
+
+    list_display = ('email', 'first_name', 'is_active_subscription', 'user_type')
     list_filter = ('is_superuser', 'is_active', 'groups')
     search_fields = ('email',)
     ordering = ('email',)

@@ -44,6 +44,9 @@ def service(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def how_it_works(request):
+    return render(request, 'how_it_works.html', {})
+
 
 def search_result(request):
     # products = Product()

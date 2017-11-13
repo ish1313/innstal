@@ -1,0 +1,42 @@
+<div class="card">
+<table class="highlight striped white">
+    <thead>
+        <tr>
+            <th>SL No.</th>
+            <th>Warranty Holder</th>
+            <th>Product Name</th>
+            <th>Product Serial</th>
+            <th>
+                Registration Status
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for rproduct in registered_products %}
+        <tr>
+            <td>{{ rproduct.id }}</td>
+            <td>{{ rproduct.buyer.get_full_name }}</td>
+            <td>{{ rproduct.product.product_name }}</td>
+            <td>{{ rproduct.product_serial }}</td>
+            <td>{{ rproduct.warranty_status }}</td>
+
+            <td class="right-align">
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i></a>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">three</a></li>
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+$(document).ready(function(){
+    $(".dropdown-button").dropdown();
+});
+</script>
+</div>

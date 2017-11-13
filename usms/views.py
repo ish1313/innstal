@@ -67,11 +67,11 @@ def dashboard(request):
     user = request.user
     if user.user_type == '2' and user.is_active_subscription == False:
         return HttpResponseRedirect('/subscription/')
+    elif user.user_type == '2' and user.is_active_subscription == True:
+        return render(request, 'business-dashboard.html', {})
     else:
         registered_products = RegisterWarrenty.objects.filter(buyer=user)
-        # prods = [p for ]
-        # registered_products = Product.objects.filter(registerwarrenty__buyer=user)
-        return render(request, 'dashboard.html',
+        return render(request, 'customer-dashboard.html',
                 {'registered_products': registered_products})
 
 def ds_product_manual(request):
@@ -79,14 +79,28 @@ def ds_product_manual(request):
 
 def ds_warranties(request):
     user = request.user
-    registered_products = RegisterWarrenty.objects.filter(buyer=user)
-    cwproducts = []
-    cwproducts = ClaimProductWarranty.objects.filter(product__in=registered_products)
-    return render(request, 'dashboard/warranty.html',
+
+    if user.user_type == '1':
+        registered_products = RegisterWarrenty.objects.filter(buyer=user)
+        cwproducts = ClaimProductWarranty.objects.filter(product__in=registered_products)
+        return render(request, 'dashboard/warranty.html',
+            {'registered_products': registered_products, 'cwproducts': cwproducts})
+    elif user.user_type == '2':
+        registered_products = RegisterWarrenty.objects.all()
+        cwproducts = ClaimProductWarranty.objects.all()
+        return render(request, 'dashboard/business/warranty.html',
             {'registered_products': registered_products, 'cwproducts': cwproducts})
 
-def subscription(request):
-    return render(request, 'subscription.html', {})
+
+def user_subscribe(request, package_id):
+    user = request.user
+    # if request.method == 'GET':
+    #     return render(request, 'subscription.html', {})
+    # else:
+    user.is_active_subscription = True
+    user.save()
+    return HttpResponseRedirect("/dashboard/")
+
 
 
 def account_details(request):
