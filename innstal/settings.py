@@ -70,24 +70,24 @@ WSGI_APPLICATION = 'innstal.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'innstal2',
-        'USER': 'innstal',
-        'PASSWORD': 'qweqwe',
-        'HOST': '192.168.43.89',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'innstal2',
+#         'USER': 'innstal',
+#         'PASSWORD': 'qweqwe',
+#         'HOST': '192.168.43.89',
+#         'PORT': '5432',
+#     }
+# }
 
-# import dj_database_url
-#
-# ENVIRONMENT = 'production'
-#
-# DATABASES['default'] = dj_database_url.config(
-#     default='postgres://gmeqyjfuhsaxtw:2dc36a5fd8a4b3d93b1af7eb230f1390e9eaf17622710b53e7e288b1366853e2@ec2-54-235-90-125.compute-1.amazonaws.com:5432/d7rlg505efksfp'
-# )
+import dj_database_url
+
+ENVIRONMENT = 'production'
+
+DATABASES['default'] = dj_database_url.config(
+    default='postgres://gmeqyjfuhsaxtw:2dc36a5fd8a4b3d93b1af7eb230f1390e9eaf17622710b53e7e288b1366853e2@ec2-54-235-90-125.compute-1.amazonaws.com:5432/d7rlg505efksfp'
+)
 
 
 # Password validation
