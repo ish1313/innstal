@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
-from django.contrib.auth import authenticate, login as admin_login
+from django.contrib.auth import authenticate, login, logout
+# from django.contrib.auth import authenticate, login as admin_login
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -43,7 +43,7 @@ def signup(request):
     else:
         return render(request, 'signup.html', {})
 
-def login(request):
+def user_login(request):
     if request.method == 'POST':
         # import pdb; pdb.set_trace()
         email = request.POST.get('email')
@@ -51,7 +51,7 @@ def login(request):
         user = authenticate(email=email, password=password)
 
         try:
-            admin_login(request, user)
+            login(request, user)
             if user.is_superuser == True:
                 return HttpResponseRedirect('/admin/')
             if user.is_active == True and user.is_staff == True:
