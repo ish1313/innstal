@@ -1,0 +1,37 @@
+{% extends "business-dashboard.html" %}
+{% load staticfiles %}
+
+{% block contentdas %}
+<div class="row card z-depth-0">
+    <div class="col s3">
+        <div class="card">
+            <div class="card-image">
+                {% if product.product_image1 %}
+                    <img class="materialboxed" src="{{ product.product_image1.url }}">
+                {% else %}
+                    <img src="{% static 'images/noImageProduct.png' %}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col s9">
+        <div class="card z-depth-0">
+            <div class="card-content">
+                <span class="card-title">{{product.product_name}}</span>
+                <p>{{ product.product_model }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                Total number of user registered
+            </div>
+            <div class="col s6">
+                Total number of manual downloaeded
+            </div>
+        </div>
+    </div>
+    <div class="col s12 card" style="padding:20px">
+        {% include 'dashboard/business/product-details-chart.html' %}
+    </div>
+</div>
+{% endblock contentdas %}

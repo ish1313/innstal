@@ -4,9 +4,10 @@ from django.contrib.auth import authenticate, login, logout
 # from django.contrib.auth import authenticate, login as admin_login
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import *
+from .forms import UserForm
 from warrenty.models import *
 from product.models import *
 # Create your views here.
@@ -30,7 +31,7 @@ def signup(request):
             user.is_staff = True
             user.is_superuser == False
             user.save()
-            admin_login(request, user)
+            login(request, user)
             return HttpResponseRedirect('/dashboard/account-details/')
         elif user.user_type == '2':
             user.is_active = True
@@ -75,7 +76,13 @@ def dashboard(request):
                 {'registered_products': registered_products})
 
 def ds_product_manual(request):
-    return render(request, 'dashboard/product_manual.html')
+    user = request.user
+    if user.user_type == '1':
+        return render(request, 'dashboard/product_manual.html')
+    else:
+        products = Product.objects.filter(business=user)
+        return render(request, 'dashboard/business/product_manual.html', {'products': products})
+
 
 def ds_warranties(request):
     user = request.user
@@ -86,10 +93,28 @@ def ds_warranties(request):
         return render(request, 'dashboard/warranty.html',
             {'registered_products': registered_products, 'cwproducts': cwproducts})
     elif user.user_type == '2':
-        registered_products = RegisterWarrenty.objects.all()
-        cwproducts = ClaimProductWarranty.objects.all()
+        registered_products = RegisterWarrenty.objects.filter(product__business=user)
+        cwproducts = ClaimProductWarranty.objects.filter(product__product__business=user)
         return render(request, 'dashboard/business/warranty.html',
             {'registered_products': registered_products, 'cwproducts': cwproducts})
+
+
+@csrf_exempt
+def ds_warranties_accept(request):
+    rwid = request.POST.get("rwid")
+    rw = RegisterWarrenty.objects.get(id=rwid)
+    rw.warranty_status = '1'
+    rw.save()
+    return HttpResponse({'success': True})
+
+@csrf_exempt
+def ds_warranties_reject(request):
+    rwid = request.POST.get("rwid")
+    rw = RegisterWarrenty.objects.get(id=rwid)
+    rw.warranty_status = '2'
+    rw.save()
+    return HttpResponse({'success': False})
+
 
 
 def user_subscribe(request, package_id):
@@ -105,7 +130,27 @@ def subscription(request):
     return render(request, 'subscription.html', {})
 
 def account_details(request):
-    return render (request, 'dashboard/account_details.html', {})
+    user = request.user
+    if user.user_type == '1':
+        return render (request, 'dashboard/account_details.html', {})
+    else:
+        return render (request, 'dashboard/business/account_details.html', {})
+
+def account_update(request):
+    user = request.user
+    if request.method == 'GET':
+
+        if user.user_type == '1':
+            return render(request, 'dashboard/account-update.html')
+        else:
+            return render(request, 'dashboard/business/account-update.html')
+    elif request.method == 'POST':
+        # import pdb; pdb.set_trace()
+        user_form = UserForm(request.POST, request.FILES, instance=user)
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect("/dashboard/")
+
 
 def search_product_manual(request):
     if request.user.is_authenticated:

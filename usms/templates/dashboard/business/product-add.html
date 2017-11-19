@@ -1,0 +1,86 @@
+{% extends "business-dashboard.html" %}
+{% load staticfiles %}
+
+{% block contentdas %}
+<form action="/product/add/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="card-panel">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="product_name" name="product_name" type="text" class="validate">
+            <label for="product_name">Product Name</label>
+            <input type="hidden" name="business" value="{{request.user.id}}" />
+        </div>
+        <div class="input-field col s6">
+            <select name="product_type">
+                {% for product_type in types %}
+                    <option value="{{ product_type.id }}">{{ product_type.type_name }}</option>
+                {% endfor %}
+            </select>
+            <label for="product_type">Product Type</label>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="product_model" name="product_model" type="text" class="validate">
+            <label for="product_model">Product Model</label>
+        </div>
+        <div class="input-field col s6">
+
+            <select name="product_brand">
+                {% for brand in brand_names %}
+                    <option value="{{ brand.id }}">{{ brand.brand_name }}</option>
+                {% endfor %}
+            </select>
+            <label for="product_brand">Product Brand</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="installation_instruction" name="installation_instruction" class="installation_instruction"></textarea>
+            <label for="installation_instruction">Install Instruction</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Product Manual</span>
+                    <input type="file" name="product_manual">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s12">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Product Image</span>
+                    <input type="file" name="product_image1">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4 offset-s8">
+            <input type="hidden" name="business" value="{{ request.user}}" />
+            <button class="btn btn-large orange register" type="submit">
+                Add Product
+            </button>
+        </div>
+    </div>
+
+</div>
+</form>
+<script>
+    $(document).ready(function() {
+        // $('#installation_instruction').summernote();
+        $('select').material_select();
+    });
+  </script>
+{% endblock contentdas %}

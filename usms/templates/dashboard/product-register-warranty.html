@@ -10,7 +10,7 @@
                 <h5 class="center-align">Register For Product Warranty Card</h5>
             </div>
         </div>
-        <form action="/product/register-warranty/" method="post">
+        <form action="/product/register-warranty/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% include "dashboard/register-warranty-form.html" %}
         </form>

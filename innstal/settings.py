@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'innstal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'innstal2',
+        'NAME': 'innstal',
         'USER': 'innstal',
         'PASSWORD': 'qweqwe',
         'HOST': '192.168.43.89',

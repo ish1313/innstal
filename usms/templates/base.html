@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static '/images/logo.png" type="image/x-icon">
+    <meta name="description" content="Innstal">
+    {% block page_meta %}{% endblock page_meta %}
+
+    <title>{{ page_title }}</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/materialize.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/font-awesome.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/icofont.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/animate.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/meanmenu.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/preset.css' %}"/>
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+
+    {% block page_css %}{% endblock page_css %}
+
+    <!--        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>-->
+    <script src="{% static 'js/jquery-2.0.0.min.js' %}"></script>
+    <script src="{% static '/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static '/js/tether.min.js' %}"></script>
+
+    {% block page_head_js %}{% endblock page_head_js %}
+
+</head>
+<body>
+
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+
+    <!--================= Back to top ==================-->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
+    <!--================= Div End ==================-->
+    <!--================= Include All JS ==================-->
+
+    <!-- Bootstrap v3.3.4-->
+    <script src="{% static '/js/materialize.min.js' %}"></script>
+    <!-- Owl Carousel js library -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- Elements Animation On Scroll -->
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Responsive Menu -->
+    <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+    <!-- Sticky Nav Top Fix Nav-->
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <!-- Easing Effect-->
+    <script src="{% static 'js/jquery.easing.js' %}"></script>
+    <!-- js Plugins Initialize Scripts -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    {% block page_footer_js %}{% endblock page_footer_js %}
+</body>
+</html>

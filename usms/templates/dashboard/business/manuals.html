@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<div class="row">
+    {% for product in products %}
+    <div class="col s6 m3">
+        <div class="card">
+            <div class="card-image">
+                {% if product.product_image1 %}
+                    <img class="materialboxed" src="{{ product.product_image1.url }}">
+                {% else %}
+                    <img src="{% static 'images/noImageProduct.png' %}">
+                {% endif %}
+            </div>
+            <div class="card-action">
+
+                <a href="/product/{{product.id}}/details/">{{ product.product_name }}</a>
+
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col s8 m9">
+        <div class="card-panel">
+            <h4 class="truncate center-align">No Products Found</h4>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col s3 m3">
+        <div class="card">
+            <div class="card-image">
+                <img class="materialboxed" src="{% static 'images/upload.png' %}">
+            </div>
+            <div class="card-action">
+                <a href="/product/add/">UPLOAD A Product</a>
+            </div>
+        </div>
+    </div>
+</div>

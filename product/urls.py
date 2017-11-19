@@ -5,6 +5,7 @@ from .views import *
 
 urlpatterns = [
     url('search-manual/$', search_product_manual, name='search_product_manual'),
+    url('add/$', product_add, name='product_add'),
     url('category/$', product_category, name='product_category'),
     url('category/(?P<category_id>\d+)/$', category_products, name='category_products'),
     url('(?P<product_id>\d+)/details/$', product_details, name='product_details'),

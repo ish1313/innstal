@@ -8,7 +8,8 @@ from .models import *
 
 def index(request):
     categories = ProductCategory.objects.all()[:8]
-    blog = HomeBlog.objects.all()[0]
+    blog = []
+    blog = HomeBlog.objects.all()
     context = {
         'site_title': 'Innstal',
         'page_title': 'Home',
@@ -46,6 +47,10 @@ def contact(request):
 
 def how_it_works(request):
     return render(request, 'how_it_works.html', {})
+
+
+def business_page(request):
+    return render(request, 'business_page.html', {})
 
 
 def search_result(request):

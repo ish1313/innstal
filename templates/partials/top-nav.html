@@ -1,14 +1,29 @@
-<div class="nav-wrapper">
-    <a href="/" class="brand-logo">innstal</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/how-it-works">How it works</a></li>
-        <li><a href="/business">Business</a></li>
-        <li><a href="/blog">Blog</a></li>
-        {% if not request.user.is_authenticated %}
-	        <li><a href="/signup">Join in</a></li>
-	        <li><a class="border-1" href="/login">Login</a></li>
-        {% else %}
-        	<li><a class="border-1" href="/logout">Logout</a></li>
-        {% endif %}
-    </ul>
-</div>
+{% load staticfiles %}
+<header id="header">
+    <div class="navbar-wrapper">
+        <div class="full-width">
+            <div class="row wow fadeInUp" data-wow-duration="500ms"  data-wow-delay="900ms">
+                <div class="col s2">
+                    <div class="logo">
+                        <a href="#"><img src="{% static '/images/logo.png' %}" alt="" title=""></a>
+                    </div>
+                </div>
+                <div class="col s10">
+                    <div class="navigation">
+                        <ul class="mainnav">
+                            <li><a href="/how-it-works">How it works</a></li>
+                            <li><a href="/business">Business</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            {% if not request.user.is_authenticated %}
+                    	        <li><a class="login" href="/signup">Join in</a></li>
+                    	        <li><a class="login" href="/login">Login</a></li>
+                            {% else %}
+                            	<li><a class="login" href="/logout">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                    </div><!--/navigation-->
+                </div>
+            </div>
+        </div>
+    </div><!--/sticky-wrapper-->
+</header><!--/header-->

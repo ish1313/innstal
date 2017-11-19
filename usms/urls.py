@@ -11,6 +11,9 @@ urlpatterns = [
     url(r'dashboard/$', dashboard, name='dashboard'),
     url(r'dashboard/product-manual/$', ds_product_manual, name='ds_product_manual'),
     url(r'dashboard/warranties/$', ds_warranties, name='ds_warranties'),
+    url(r'dashboard/warranties/accept/$', ds_warranties_accept, name='ds_warranties_accept'),
+    url(r'dashboard/warranties/reject/$', ds_warranties_reject, name='ds_warranties_reject'),
     url(r'dashboard/account-details/$', account_details, name='account-details'),
+    url(r'dashboard/account-update/$', account_update, name='account-update'),
     url(r'subscribe/package/(?P<package_id>\d+)/$', user_subscribe, name='user_subscribe'),
 ]

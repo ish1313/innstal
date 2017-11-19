@@ -2,14 +2,11 @@
 {% load staticfiles %}
 
 {% block header %}
-<div class="header">
-    <nav class="">
-        {% include "partials/top-nav.html" %}
-    </nav>
+    {% include "partials/top-nav.html" %}
+
     <header class="container">
         {% include "partials/top-header.html" %}
     </header>
-</div>
 {% endblock %}
 
 {% block content %}
@@ -25,21 +22,14 @@
 
         <div class="row">
             <div class="col s12">
-                
+                {% include "partials/how-innstal-works.html" %}
             </div>
         </div>
     </section>
 
-    <section class="how-it-works">
-        {% include "partials/how-innstal-works.html" %}
-    </section>
 
 {% endblock %}
 
 {% block footer %}
-    <div id="footer">
-        <section class="container">
-            {% include "partials/footer.html" %}
-        </section>
-    </div>
+    {% include "partials/footer.html" %}
 {% endblock %}

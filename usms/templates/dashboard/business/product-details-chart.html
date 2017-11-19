@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col s10 offset-s1">
+        <canvas id="product-chart" class="chart white"></canvas>
+    </div>
+</div>
+
+
+<script>
+var ctx = document.getElementById("product-chart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["January", "Fabruary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        datasets: [{
+            label: 'User per month claimed warranty',
+            data: [20,12,23,15,13,18, 22, 25, 11, 9, 5, 29],
+            borderWidth: 1,
+            backgroundColor: 'rgba(0, 150, 240, 0.6)',
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>

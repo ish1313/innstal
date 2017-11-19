@@ -6,10 +6,10 @@
         <div class="col s12">
 
             <div class="card horizontal">
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
+                <a href="/dashboard/account-update/" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
                 <div class="card-image">
                     {% if request.user.avatar %}
-                        <img class="circle responsive-img materialboxed" src="/media/{{ request.user.avatar }}">
+                        <img class="circle responsive-img materialboxed" src="/media/{{ request.user.avatar.url }}">
                     {% else %}
                         <img class="circle responsive-img materialboxed" src="/static/images/avatar.png">
                     {% endif %}
@@ -52,7 +52,7 @@
 
                     </div>
                     <div class="card-action">
-                        <a href="#">Edit</a>
+                        <a href="/dashboard/account-update/">Edit</a>
                     </div>
                 </div>
             </div>

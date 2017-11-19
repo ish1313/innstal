@@ -1,74 +1,122 @@
 {% load staticfiles %}
-
-
-    <div class="row">
-        <div class="col m4 footer-nav animated fadeInUp">
-            <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Brand</h4>
-            <div class="col m6" style="padding: 0px;">
-                <ul class="list">
-                  <li><a href="#">Acer</a></li>
-                  <li><a href="#">AEG</a></li>
-                  <li><a href="#">Asus</a></li>
-                  <li><a href="#">Black & Decker</a></li>
-                  <li><a href="#">Bosch</a></li>
-                  <li><a href="#">Brother</a></li>
-                  <li><a href="#">Canon</a></li>
-                  <li><a href="#">Casio</a></li>
-                </ul>
-            </div>
-            <div class="col m6" style="padding: 0px;">
-              <ul class="list">
-                  <li><a href="#">Epson</a></li>
-                  <li><a href="#">Frigidaire</a></li>
-                  <li><a href="#">Fujitsu</a></li>
-                  <li><a href="#">GE</a></li>
-                  <li><a href="#">Haier</a></li>
-                  <li><a href="#">Hitachi</a></li>
-                  <li><a href="#">Honda</a></li>
-                  <li><a href="#" style="color: #ff9837;">More</a></li>
-              </ul>
-            </div>
-        </div>
-        <div class="col m3 footer-nav animated fadeInLeft">
-            <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Company</h4>
-            <ul class="list">
-              <li><a href="/about">About us</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Demo</a></li>
-              <li><a href="/service">Services</a></li>
-              <li><a href="#">Warranty</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Sitemap</a></li>
-              <li><a href="#">Legal</a></li>
-            </ul>
-        </div>
-
-        <div class="col m5 footer-social animated fadeInDown">
-            <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 30px;">Contact Detail</h4>
-            <ul>
-              <li>
-                <div class="row">
-                  <div class="col m6">
-                      <img src="{% static '/images/img_phone.png' %}" style="margin-right: 10px;">+97 20 154 86951
-                      <p style="margin-left: 22px;">+97 20 154 86951</p>  
-                  </div>
-                  <div class="col m6">
-                      <p><img src="{% static '/images/img_mail.png' %}" style="margin-right: 10px;">Info@innstal.com</p>
-                  </div>
+<!--================= Footer Section ==================-->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row wow fadeInUp" data-wow-duration="500ms"  data-wow-delay="900ms">
+                <div class="col s6">
+                    <div class="col s4">
+                        <div class="footer-top-block">
+                            <div class="footer-title">Brand</div>
+                            <ul>
+                                <li><a href="">Acer</a></li>
+                                <li><a href="">AEG</a></li>
+                                <li><a href="">Asus</a></li>
+                                <li><a href="">Black & Decker</a></li>
+                                <li><a href="">Bosch</a></li>
+                                <li><a href="">Brother</a></li>
+                                <li><a href="">Canon</a></li>
+                                <li><a href="">Casio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="footer-top-block">
+                            <div class="footer-title"> </div>
+                            <ul>
+                                <li><a href="">Epson</a></li>
+                                <li><a href="">Frigidaire</a></li>
+                                <li><a href="">Fujitsu</a></li>
+                                <li><a href="">GE</a></li>
+                                <li><a href="">Haier</a></li>
+                                <li><a href="">Hitachi</a></li>
+                                <li><a href="">Honda</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <div class="footer-top-block">
+                            <div class="footer-title">Company</div>
+                            <ul>
+                                <li><a href="">About us</a></li>
+                                <li><a href="">Products</a></li>
+                                <li><a href="">Services</a></li>
+                                <li><a href="">Warranty</a></li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">Sitemap</a></li>
+                                <li><a href="">Legal</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                </li>
-              
-              <li><img src="{% static '/images/img_location.png' %}" style="margin-right: 10px;">Studio 103, The Business Centre, 61 Wellfield Road, Roath, Cardiff CF24 3DG</li>
-              
-            </ul>
-          <h4 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Subscribe</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-          <input type="text" name="" style="width: 100%; height: 50px; padding-left: 20px; padding-right: 135px;" placeholder="Enter Your Email Address">
-          <div>
-          <div style="position: relative; top: -36px; left: -20px; float: right;">
-            <a href=""><p style="color: #ff9837"><img src="{% static '/images/icon_subscribe.png' %}" style="width: 20px; height: 20px; margin-right: 15px;">Subscribe</p></a>
-          </div>
-          </div>
-      </div>
-     
-  </div>
+                <div class="col s6">
+                    <div class="row">
+                        <div class="col s1"></div>
+                        <div class="col s11">
+                            <div class="footer-top-block">
+                                <div class="footer-title">Contact Details</div>
+                                <div class="row">
+                                    <div class="col s7">
+                                        <div class="footer-addess">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <p>+97 20 154 86951 <br> +97 20 154 86951</p>
+                                        </div>
+                                    </div>
+                                    <div class="col s5">
+                                        <div class="footer-email">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <a href="mailto:Info@innstal.com" target="_top">Info@innstal.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="footer-addess mb-40">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <p>Studio 103, The Business Centre, 61 Wellfield Road,<br/> Roath, Cardiff CF24 3DG</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="footer-subscribe">
+                                            <div class="footer-title">Subscribe</div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                                        </div>
+                                        <div class="subscribe-field">
+                                            <input placeholder="Enter Your Email Address" type="text" class="input-field-inner">
+                                            <button type="submit" class="subscribe-btn"><i class="fa fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="full-width">
+            <div class="row wow fadeInUp" data-wow-duration="500ms"  data-wow-delay="900ms">
+                <div class="col s6">
+                    <div class="copyRight">&COPY; Copyright 2017 <a href="#">Innstal,</a> Inc. All Rights Reserved</div>
+                </div>
+                <div class="col s6">
+                    <div class="footer-social">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer><!--End footer-->

@@ -1,0 +1,61 @@
+{% extends "business-dashboard.html" %}
+{% load staticfiles %}
+
+{% block contentdas %}
+    <div class="row">
+        <div class="col s12">
+
+            <div class="card horizontal">
+                <a href="/dashboard/account-update/" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
+                <div class="card-image">
+                    {% if request.user.avatar %}
+                        <img class="circle responsive-img materialboxed" src="/media/{{ request.user.avatar }}">
+                    {% else %}
+                        <img class="circle responsive-img materialboxed" src="/static/images/avatar.png">
+                    {% endif %}
+                    <span class="card-title">{{ request.user.first_name }} {{ request.user.last_name }}</span>
+
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+
+                        <table class="highlight bordered">
+                            <tbody>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{ request.user.first_name }} {{ request.user.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>{{ request.user.email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date Joined</th>
+                                    <td>{{ request.user.date_joined }}</td>
+                                </tr>
+                                <tr>
+                                    <th>User Type</th>
+                                    {% if request.user.user_type == '1' %}
+                                        <td>Customer</td>
+                                    {% elif  request.user.user_type == '2'%}
+                                        <td>
+                                            Business
+                                        </td>
+                                    {% else %}
+                                        <td>
+                                            Admin
+                                        </td>
+                                    {% endif %}
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="card-action">
+                        <a href="/dashboard/account-update/">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock contentdas %}

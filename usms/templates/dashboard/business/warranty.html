@@ -2,19 +2,91 @@
 {% load staticfiles %}
 
 {% block contentdas %}
-<div class="col s12">
-    <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#allproducts">All Registered Application</a></li>
-        <li class="tab col s3"><a href="#claimed_warranties">All Claimed Warranties</a></li>
-    </ul>
-</div>
-<div id="allproducts" class="col s12">
-    {% include "dashboard/business/registered-products.html" %}
-</div>
-<div id="claimed_warranties" class="col s12">
-    {% include "dashboard/business/claimed-warrenty-products.html" %}
-</div>
+<div class="row">
+    <div class="col s12 card">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        S.No
+                    </th>
+                    <th>
+                        Warranty Holder
+                    </th>
+                    <th>
+                        Product Name
+                    </th>
+                    <th>
+                        Product Type
+                    </th>
+                    <th width='150'>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pro in registered_products %}
+                    <tr>
+                        <td>
+                            {{ pro.id }}
+                        </td>
+                        <td>
+                            {{ pro.buyer.email }}
+                        </td>
+                        <td>
+                            {{ pro.product.product_name }}
+                        </td>
+                        <td>
+                            {{ pro.product.product_type.type_name }}
+                        </td>
+                        <td>
+                            {% if pro.warranty_status == '0' %}
+                                <span class="btn-flat green action" data-id={{pro.id}} data-href="/dashboard/warranties/accept/">Accept</span>
+                                <span class="btn-flat red action" data-id={{pro.id}} data-href="/dashboard/warranties/reject/">Reject</span>
+                            {% elif  pro.warranty_status == '1' %}
+                                <span class="btn-flat disabled green">ACCEPTED</span>
+                            {% elif  pro.warranty_status == '2' %}
+                                <span class="btn-flat disabled red">REJECTED</span>
+                            {% elif  pro.warranty_status == '3' %}
+                                <span class="btn-flat disabled">WARRENTY EXPIRED</span>
+                            {% endif %}
 
+                        </td>
+                    </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">
+                        No product
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+    $("span.action").click(function(e){
+        // e.preventDefault()
+        // console.log($(this).data('id'))
+        // console.log($(this).data('href'))
+        var rwid = $(this).data('id');
+        var url = $(this).data('href');
 
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {'rwid': rwid},
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            success: function(data) {
+                console.log(data)
+                window.location.reload()
+            }
+        })
+    })
+
+});
+
+</script>
 
 {% endblock contentdas %}
