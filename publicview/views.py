@@ -19,16 +19,16 @@ def index(request):
 
     return render(request, 'index.html', context)
 
-def SignUp(request):
-    context = {
-        'site_title': 'Innstal',
-        'page_title': 'SignUp'
-    }
-    return render(request, 'signup.html', context)
-
-
-def login(request):
-	return render(request, 'login.html')
+# def SignUp(request):
+#     context = {
+#         'site_title': 'Innstal',
+#         'page_title': 'SignUp'
+#     }
+#     return render(request, 'signup.html', context)
+#
+#
+# def login(request):
+# 	return render(request, 'login.html')
 
 def register_warrantly(request):
 	return render(request, 'register_warrantly.html')

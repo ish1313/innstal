@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<section class="banner">
+    <div class="container">
+        <div class="row wow fadeInUp" data-wow-duration="500ms"  data-wow-delay="900ms">
+            <div class="col s5">
+                <div class="banner-left">
+                    <div class="banner-heading">Looking for<br/>Instuction Manual</div>
+                    {% if blog.looking_for_instruction %}
+                        {{ blog.looking_for_instruction | safe }}
+                    {% else %}
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.</p>
+                    {% endif %}
+                    <div class="banner-form">
+                        <form action="/product/search-manual/" method="get">
+                            {% csrf_token %}
+                            <input class="input-field-search" type="text" name="" velue="" placeholder="Search for Product Manuals...">
+                            <button class="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    <p>Browse In Your Catagory <br /><br />
+                        <a href="/product/category/" class="down-array">
+                            <i class="material-icons">arrow_downward</i>
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="col s2"></div>
+            <div class="col s5">
+                <div class="banner-right">
+                    <div class="banner-heading">Want to Register <br/> your Warranty Card</div>
+                    {% if blog.want_to_register_your_warranty_car %}
+                        {{ blog.want_to_register_your_warranty_car | safe }}
+                    {% else %}
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididuore magna aliqua.</p>
+                    {% endif %}
+                    <a href="/product/register-warranty/" class="custom-btn">Register Now</a>
+
+                    <a href="#" class="claim-warranty">Claim Warranty <span></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

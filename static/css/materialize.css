@@ -5983,7 +5983,7 @@ label {
 }
 
 /* Text inputs */
-input:not([type]),
+/*input:not([type]),
 input[type=text]:not(.browser-default),
 input[type=password]:not(.browser-default),
 input[type=email]:not(.browser-default),
@@ -6180,7 +6180,7 @@ textarea.materialize-textarea.valid + label.active:after {
   display: block;
 }
 
-/* Validation Sass Placeholders */
+ Validation Sass Placeholders 
 input.valid:not([type]), input.valid:not([type]):focus,
 input[type=text].valid:not(.browser-default),
 input[type=text].valid:not(.browser-default):focus,
@@ -6328,7 +6328,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
   opacity: 0;
   -webkit-transition: .2s opacity ease-out, .2s color ease-out;
   transition: .2s opacity ease-out, .2s color ease-out;
-}
+}*/
 
 .input-field {
   position: relative;

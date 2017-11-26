@@ -1,12 +1,11 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{% static '/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static '/images/logo.png' %}" type="image/x-icon">
     <meta name="description" content="Innstal">
     {% block page_meta %}{% endblock page_meta %}
 
@@ -21,8 +20,14 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/meanmenu.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static '/css/preset.css' %}"/>
 
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/owl.theme.default.min.css' %}">
+
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <!-- responsive styles-->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/responsive.css' %}"/>
 
     {% block page_css %}{% endblock page_css %}
 
@@ -38,31 +43,33 @@
     {% block page_head_js %}{% endblock page_head_js %}
 
 </head>
+
 <body>
+    {% block loader %}
+        {% include "partials/loader.html" %}
+    {% endblock loader %}
 
-    {% block header %}{% endblock %}
-    {% block content %}{% endblock %}
-    {% block footer %}{% endblock %}
+    {% block mainbody %}
+    <div class="home">
 
+        {% block header %}{% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% block footer %}{% endblock %}
+
+    </div>
+    {% endblock mainbody %}
     <!--================= Back to top ==================-->
     <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>
     <!--================= Div End ==================-->
-    <!--================= Include All JS ==================-->
+    {% block footer_js %}
+        {% include "partials/footer-js.html" %}
+    {% endblock footer_js %}
 
-    <!-- Bootstrap v3.3.4-->
-    <script src="{% static '/js/materialize.min.js' %}"></script>
-    <!-- Owl Carousel js library -->
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <!-- Elements Animation On Scroll -->
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <!-- Responsive Menu -->
-    <script src="{% static 'js/jquery.meanmenu.js' %}"></script>
-    <!-- Sticky Nav Top Fix Nav-->
-    <script src="{% static 'js/jquery.sticky.js' %}"></script>
-    <!-- Easing Effect-->
-    <script src="{% static 'js/jquery.easing.js' %}"></script>
-    <!-- js Plugins Initialize Scripts -->
-    <script src="{% static 'js/scripts.js' %}"></script>
+    <!--================= Include Extra JS ==================-->
     {% block page_footer_js %}{% endblock page_footer_js %}
+
 </body>
+
 </html>

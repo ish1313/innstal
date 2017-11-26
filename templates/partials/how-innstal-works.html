@@ -1,100 +1,94 @@
 {% load staticfiles %}
 
-<div class="container">
-    <div class="row">
-        <div class="col s12">
-            <h3 style="text-align: center;">How Innstal Works</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s10 m6">
-            <b style="margin-bottom: 30px;">Instruction Manual</b>
-            <div class="row">
-                <div class="col s2">
-                    <img src="{% static '/images/img_work1.png' %}">
-                </div>
-                <div class="col s10">
-                    <b>Find User Manual</b>
-                    {% if blog.find_user_manual %}
-                        {{ blog.find_user_manual | safe }}
-                    {% else %}
-                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
-                    {% endif %}
+<!--================= How Innstal Works Section ==================-->
+    <section class="how-works-section">
+        <div class="container">
+            <div class="section-title">How Innstal Works</div>
+            <div class="row wow fadeInUp" data-wow-duration="500ms" data-wow-delay="900ms">
+                <div class="col s5">
+                    <div class="instruction-manual">
+                        <h4>Instruction Manual</h4>
+                        <div class="im-block">
+                            <div class="imb-list">
+                                <div class="imb-list-thumb"><img src="{% static '/images/01.png' %}" alt="" title=""></div>
+                                <div class="imb-list-info">
+                                    <h5>Find User Manual</h5>
+                                    <span></span>
+                                    {% if blog.find_user_manual %}
+                                        {{ blog.find_user_manual | safe }}
+                                    {% else %}
+                                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="line"></div>
 
-                </div>
-            </div>
-            <div style="margin-bottom: 10px; margin-left: 26px;">
-                <img src="{% static '/images/icon_sep1.png' %}">
-            </div>
-            <div class="row">
-                <div class="col s2">
-                    <img src="{% static '/images/img_work2.png' %}">
-                </div>
-                <div class="col s10" style="padding-right: 100px;">
-                    <h6>Read Installation Instruction</h6>
-                    {% if blog.read_installation_instruction %}
-                        {{ blog.read_installation_instruction | safe }}
-                    {% else %}
-                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div style="margin-bottom: 10px; margin-left: 26px;">
-                <img src="{% static '/images/icon_sep1.png' %}">
-            </div>
-            <div class="row">
-                <div class="col s2">
-                    <img src="{% static '/images/img_work3.png' %}">
-                </div>
-                <div class="col s10" style="padding-right: 100px;">
-                    <h6>Download as PDF</h6>
-                    {% if blog.read_installation_instruction %}
-                        {{ blog.read_installation_instruction | safe }}
-                    {% else %}
-                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+                            <div class="imb-list">
+                                <div class="imb-list-thumb"><img src="{% static '/images/02.png' %}" alt="" title=""></div>
+                                <div class="imb-list-info">
+                                    <h5>Read Installation Instruction</h5>
+                                    <span></span>
+                                    {% if blog.read_installation_instruction %}
+                                        {{ blog.read_installation_instruction | safe }}
+                                    {% else %}
+                                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                                    {% endif %}
+                                </div>
+                            </div>
 
-        <div class="col s6">
-            <h2 style="margin-bottom: 30px;">Warranty Card</h2>
-            <div class="row">
-                <div class="col s3">
-                    <img src="{% static '/images/img_work4.png' %}">
-                </div>
-                <div class="col s9">
-                    <h6>Register Your Warranty Card</h6>
-                    {% if blog.read_installation_instruction %}
-                        {{ blog.read_installation_instruction | safe }}
-                    {% else %}
-                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div style=" margin-left: 26px; position: relative; top: -30px;" id="icon_sep2">
-                <img src="{% static '/images/icon_sep2.png' %}">
-            </div>
-            <div class="row">
-                <div class="col s2">
-                    <img src="{% static '/images/img_work5.png' %}">
-                </div>
-                <div class="col s10" style="padding-right: 100px;">
-                    <h6>Claim Your warranty card In future</h6>
-                    {% if blog.read_installation_instruction %}
-                        {{ blog.read_installation_instruction | safe }}
-                    {% else %}
-                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div style="height: 40px;"></div>
-            <div class="mbr-section-btn" style="text-align: left;">
+                            <div class="line"></div>
+                            <div class="imb-list">
+                                <div class="imb-list-thumb"><img src="{% static '/images/03.png' %}" alt="" title=""></div>
+                                <div class="imb-list-info">
+                                    <h5>Downaload as PDF</h5>
+                                    <span></span>
+                                    {% if blog.read_installation_instruction %}
+                                        {{ blog.read_installation_instruction | safe }}
+                                    {% else %}
+                                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                                    {% endif %}
+                                </div>
+                            </div>
 
-                <a class="btn orange waves-effect waves-light rounded-20" href="/product/register-warranty/">
-                    Register a Warranty Card
-                </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col s2"></div>
+                <div class="col s5">
+                    <div class="instruction-manual">
+                        <h4>Warranty Card</h4>
+                        <div class="im-block">
+                            <div class="imb-list">
+                                <div class="imb-list-thumb"><img src="{% static '/images/04.png' %}" alt="" title=""></div>
+                                <div class="imb-list-info">
+                                    <h5>Register Your Warranty Card</h5>
+                                    <span></span>
+                                    {% if blog.read_installation_instruction %}
+                                        {{ blog.read_installation_instruction | safe }}
+                                    {% else %}
+                                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="line line2"></div>
+
+                            <div class="imb-list">
+                                <div class="imb-list-thumb"><img src="{% static '/images/05.png' %}" alt="" title=""></div>
+                                <div class="imb-list-info">
+                                    <h5>Claim Your warranty card In future</h5>
+                                    <span></span>
+                                    {% if blog.read_installation_instruction %}
+                                        {{ blog.read_installation_instruction | safe }}
+                                    {% else %}
+                                        <p>Lorem ipsum dolor sit amet consectetur adipis cing elit, sed do eiusmod</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/product/register-warranty/" class="custom-btn rw-card">Register a Warranty Card</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>

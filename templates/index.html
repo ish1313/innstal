@@ -4,30 +4,21 @@
 {% block header %}
     {% include "partials/top-nav.html" %}
 
-    <header class="container">
-        {% include "partials/top-header.html" %}
-    </header>
+    {% include "partials/banner.html" %}
 {% endblock %}
 
 {% block content %}
-
-    <section class="container">
-        <div class="row">
-            <div class="col s12">
-                <h4 style="color: #000; margin: 30px;">Browse in perfact Instruction Manual Category</h4>
-            </div>
-        </div>
-
+    {% if categories %}
         {% include "partials/category-browse.html" %}
+    {% else %}
+        {% include "partials/category-browse-demo.html" %}
+    {% endif %}
 
-        <div class="row">
-            <div class="col s12">
-                {% include "partials/how-innstal-works.html" %}
-            </div>
-        </div>
-    </section>
+    {% include "partials/how-innstal-works.html" %}
 
+    {% include "partials/joinus.html" %}
 
+    {% include "partials/about-innstal.html" %}
 {% endblock %}
 
 {% block footer %}

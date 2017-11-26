@@ -2,13 +2,13 @@
   jQuery(document).ready(function () {
 	 jQuery('.navigation').meanmenu();
 	});
-/*===Top Fix Navi sticky-navigation===*/	
-	 
+/*===Top Fix Navi sticky-navigation===*/
+
 jQuery(window).on("load", function() {
       jQuery(".navbar-wrapper").sticky({ topSpacing: 0 });
     });
-	
-/*===animated===*/	
+
+/*===animated===*/
  var wow = new WOW(
   {
     boxClass:     'wow',      // animated element css class (default is wow)
@@ -18,9 +18,9 @@ jQuery(window).on("load", function() {
   }
   );
   wow.init();
-	
-	
-/*===Back to Top===*/  
+
+
+/*===Back to Top===*/
 
      jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 100) {
@@ -44,7 +44,7 @@ jQuery(window).on("load", function() {
 jQuery(document).ready(function() {
   jQuery(".owl-carousel").owlCarousel({
     loop: true,
-    navigation : true, 
+    navigation : true,
     autoPlay: true,
     autoplayTimeout: 500,
     autoplayHoverPause: true,
@@ -56,6 +56,7 @@ jQuery(document).ready(function() {
     singleItem: true,
     pagination: true
   });
+  $('.materialboxed').materialbox();
 });
 
 //========================

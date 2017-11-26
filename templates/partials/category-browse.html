@@ -1,27 +1,36 @@
 {% load staticfiles %}
 
-<div class="row">
-    {% for category  in categories %}
-    <div class="col s6 m3">
-        <div class="card">
-            <div class="card-image">
-                {% if category.category_image %}
-                    <img src="{{ category.category_image.url }}">
-                {% else %}
-                    <img src="/static/">
-                {% endif %}
-            </div>
-            <div class="card-action">
-                <a href="/product/category/{{ category.id }}/">{{ category.name }}</a>
-            </div>
-        </div>
-    </div>
-    {% empty %}
-    <div class="col s6 m3">
-        <div class="card-panel">
-            <h4>No Data available</h4>
-        </div>
-    </div>
-    {% endfor %}
+<!--================= All Category Section ==================-->
+   <section class="manual-category-section">
+       <div class="container">
+           <div class="section-title"> Browse in perfect  Instruction Manual Category</div>
+           <div class="row wow fadeInUp" data-wow-duration="500ms" data-wow-delay="900ms">
+               {% for category  in categories %}
+               <div class="col s3">
+                   <div class="category-list-block z-depth-1">
+                       <a href="/product/category/{{ category.id }}/">
+                           <div class="clb-thumb">
+                               {% if category.category_image %}
+                                   <img src="{{ category.category_image.url }}">
+                               {% else %}
+                                   <img src="/static/">
+                               {% endif %}
+                           </div>
+                           <div class="clb-title">{{ category.name }}</div>
+                       </a>
+                   </div>
+               </div>
+               {% empty %}
+               <div class="col s6 m3">
+                   <div class="card-panel">
+                       <h4>No Data available</h4>
+                   </div>
+               </div>
+               {% endfor %}
 
-</div>
+               <div class="clearfix"></div>
+               <a class="browse-all" href="">Browse All Category</a>
+           </div>
+
+       </div>
+   </section>
