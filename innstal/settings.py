@@ -81,13 +81,13 @@ DATABASES = {
     }
 }
 
-# import dj_database_url
-#
-# ENVIRONMENT = 'production'
-#
-# DATABASES['default'] = dj_database_url.config(
-#     default='postgres://avalqvbddjckqf:42bdfeb07f2f93ac6b26cd6883150eaa1b9bfb7ea9675e60fd7681b579d61be1@ec2-54-221-207-143.compute-1.amazonaws.com:5432/d8iibm57k0m9bm'
-# )
+import dj_database_url
+
+ENVIRONMENT = 'production'
+
+DATABASES['default'] = dj_database_url.config(
+    default='postgres://avalqvbddjckqf:42bdfeb07f2f93ac6b26cd6883150eaa1b9bfb7ea9675e60fd7681b579d61be1@ec2-54-221-207-143.compute-1.amazonaws.com:5432/d8iibm57k0m9bm'
+)
 
 
 # Password validation
